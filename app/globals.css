@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --color-bg:           #F5F5F5;
+  --color-surface:      #FFFFFF;
+  --color-text:         #111111;
+  --color-text-muted:   #666666;
+  --color-border:       #E0E0E0;
+
+  --color-blue:         #1877F2;
+  --color-blue-dark:    #0D5DBF;
+  --color-yellow:       #FFD600;
+  --color-yellow-dark:  #E6BF00;
+  --color-red:          #FF3B30;
+  --color-green:        #00C853;
+  --color-orange:       #FF6B35;
+
+  /* Typography — resolved from next/font variables injected in layout.tsx */
+  --font-hero:   var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-body:   var(--font-inter), 'Inter', sans-serif;
+
+  /* Spacing */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.14);
+  --shadow-btn: 0 4px 14px rgba(24,119,242,0.35);
 }
 
+/* ─────────────────────────────────────
+   TAILWIND THEME EXTENSION
+───────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-hero);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ─────────────────────────────────────
+   KEYFRAME ANIMATIONS
+───────────────────────────────────── */
+
+/* Floating sticker bob */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--sticker-rotate, -3deg)); }
+  50%       { transform: translateY(-10px) rotate(var(--sticker-rotate, -3deg)); }
+}
+
+/* Gentle float variant for right-leaning stickers */
+@keyframes float-alt {
+  0%, 100% { transform: translateY(0px) rotate(var(--sticker-rotate, 4deg)); }
+  50%       { transform: translateY(-8px) rotate(var(--sticker-rotate, 4deg)); }
+}
+
+/* Green dot pulse */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+  50%       { box-shadow: 0 0 0 6px rgba(0, 200, 83, 0); }
+}
+
+/* Scroll reveal fade-up (used by framer-motion too) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Shimmer on cards */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Bounce click-me sticker */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  40%       { transform: translateY(-14px) rotate(-3deg); }
+  60%       { transform: translateY(-7px) rotate(-6deg); }
+}
+
+/* Window card entrance */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero left card entrance */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero photo slide in from left */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero text stagger fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────
+   ANIMATION UTILITY CLASSES
+───────────────────────────────────── */
+.animate-float         { animation: float 4s ease-in-out infinite; }
+.animate-float-alt     { animation: float-alt 4.5s ease-in-out infinite; }
+.animate-bounce-slow   { animation: bounce-slow 2.8s ease-in-out infinite; }
+
+/* animation-fill-mode shorthand used by Tailwind arbitrary values */
+[style*="animation"] { animation-fill-mode: both; }
+.animate-pulse-green   { animation: pulse-green 2s ease-in-out infinite; }
+.animate-slide-left    { animation: slide-in-left 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+.animate-slide-right   { animation: slide-in-right 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s forwards; opacity: 0; }
+
+/* ─────────────────────────────────────
+   COMMON COMPONENT STYLES
+───────────────────────────────────── */
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-yellow);
+  color: var(--color-text);
+  font-family: var(--font-hero);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2.5px solid var(--color-text);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--color-text);
+  background: var(--color-yellow-dark);
+}
+
+.btn-primary:active { transform: translateY(0); box-shadow: none; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-hero);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2.5px solid var(--color-text);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--color-text);
+  background: rgba(0,0,0,0.04);
+}
+
+.btn-secondary:active { transform: translateY(0); box-shadow: none; }
+
+/* Section wrapper — max-width matches navbar pill (960px) */
+.section {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+.section-title {
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.section-title span {
+  color: var(--color-blue);
+}
+
+/* ─────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #bbb; }
