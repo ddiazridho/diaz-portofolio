@@ -129,57 +129,47 @@ export default function SkillsSection() {
 
       <div className="section">
         {/* ── Neo-Brutalist Editorial Header ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="pb-8 mb-14"
-          style={{ marginBottom: "60px" }}
-        >
-          <div className="gap-2 relative select-none flex flex-col items-center">
-            {/* Giant two-line editorial text */}
-            <div className="w-full flex justify-center items-center h-28 sm:h-36 overflow-visible" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-              <div className="scale-[0.45] sm:scale-[0.6] origin-center relative">
-                {/* Line 1: "SKILLS AND" */}
-                <div className="flex items-end leading-none gap-3 sm:gap-4">
-                  <span
-                    className="font-black tracking-tighter uppercase text-[clamp(3.2rem,10vw,8rem)] text-[#111]"
-                    style={{ lineHeight: 0.88 }}
-                  >
-                    SKILLS
-                  </span>
-                  <span
-                    className="inline-block -translate-x-2 font-black uppercase text-[clamp(1.1rem,3.5vw,2.8rem)] text-[#FF5722] mb-[0.15em] whitespace-nowrap leading-none"
-                    style={{
-                      textDecoration: "underline",
-                      textDecorationColor: "#FF5722",
-                      textDecorationThickness: "3px",
-                      textUnderlineOffset: "5px",
-                    }}
-                  >
-                    AND
-                  </span>
-                  <div className="self-center ml-1 w-[5rem] sm:w-[6.2rem] h-[5rem] sm:h-[6.2rem] bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_#000] sm:shadow-[4px_4px_0px_#000] flex items-center justify-center p-2 overflow-hidden group">
-                    <SiDocker className="w-3/4 h-3/4 text-[#2496ED] group-hover:scale-110 transition-transform duration-200" />
-                  </div>
-                </div>
+        {/* Header */}
+        <div className="flex flex-col items-center justify-center text-center mb-10 lg:mb-12">
+          {/* Counter Badge */}
+          <motion.div
+            variants={fadeUp}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+              DEV STACK <span className="opacity-40 font-normal">|</span> (02)
+            </span>
+          </motion.div>
 
-                {/* Line 2: "DEV STACK" */}
-                <div
-                  className="font-black tracking-tighter uppercase text-[clamp(3.2rem,10vw,8rem)] text-[#111] mt-1"
-                  style={{ lineHeight: 0.88 }}
-                >
-                  DEV STACK
-                </div>
-              </div>
-            </div>
-            <motion.p variants={fadeUp} custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mx-auto text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed">
-              A glimpse into my background, education, and what drives my passion for software engineering.
-            </motion.p>
-          </div>
+          {/* Section Title: Selected Works */}
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            TECHNOLOGY <br />
 
-        </motion.div>
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeUp}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+          >
+            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+          </motion.p>
+        </div>
 
 
         {/* ── Neo-Brutalism Two-Column Grid ── */}

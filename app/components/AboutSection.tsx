@@ -22,17 +22,44 @@ export default function AboutSection() {
       <div className="section">
 
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-20 lg:mb-28">
-          {/* <motion.div variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <span className="inline-block px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-4 uppercase">
-              Background Story
+        <div className="flex flex-col items-center justify-center text-center mb-10 lg:mb-12">
+          {/* Counter Badge */}
+          <motion.div
+            variants={fadeUp}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+              About me<span className="opacity-40 font-normal">|</span> (01)
             </span>
-          </motion.div> */}
-          <motion.h2 variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            GET TO KNOW ME
+          </motion.div>
+
+          {/* Section Title: Selected Works */}
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            BACKGROUND <br />
+
           </motion.h2>
-          <motion.p variants={fadeUp} custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed">
-            A glimpse into my background, education, and what drives my passion for software engineering.
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeUp}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+          >
+            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
           </motion.p>
         </div>
 

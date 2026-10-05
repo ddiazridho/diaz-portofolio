@@ -9,7 +9,7 @@ import {
   HiArrowTopRightOnSquare,
 } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -36,10 +36,10 @@ const actionCards = [
     href: "https://www.linkedin.com/in/diaz-ridho-yuristianto/",
   },
   {
-    label: "WHATSAPP",
-    icon: <FaWhatsapp className="w-5 h-5 text-[#25D366]" />,
-    iconBg: "bg-green-100",
-    href: "https://wa.me/?text=Halo%20Diaz,%20saya%20tertarik%20untuk%20berkolaborasi",
+    label: "INSTAGRAM",
+    icon: <FaInstagram className="w-5 h-5 text-[#E1306C]" />,
+    iconBg: "bg-pink-100",
+    href: "https://www.instagram.com/dyzrd_/",
   },
 ];
 
@@ -88,60 +88,59 @@ export default function ContactSection() {
     >
       <div className="w-full min-h-screen flex flex-col items-center justify-center p-4">
         <div className="flex max-w-2xl flex-col items-center text-center">
-          {/* Pill Badge Kuning */}
-          <motion.div
-            variants={fadeUp}
-            custom={0}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mb-4 sm:mb-5"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] uppercase">
-              <span className="text-base leading-none">📬</span>
-              GET IN TOUCH
-            </span>
-          </motion.div>
+          {/* Header */}
+          <div className="flex flex-col items-center justify-center text-center mb-10 lg:mb-12">
+            {/* Counter Badge */}
+            <motion.div
+              variants={fadeUp}
+              custom={0}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+                LAST PAGE <span className="opacity-40 font-normal">|</span> (04)
+              </span>
+            </motion.div>
 
-          {/* H2 Display Font Tebal */}
-          <motion.h2
-            variants={fadeUp}
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.08] mb-4 sm:mb-5"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
-          >
-            LET&apos;S TALK ABOUT YOUR <br />
-            <span className="relative inline-block mt-1">
-              NEXT PROJECT!
-            </span>
-          </motion.h2>
+            {/* Section Title: Selected Works */}
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              CONTACT ME<br />
 
-          {/* Subtitle / Deskripsi */}
-          <motion.p
-            variants={fadeUp}
-            custom={2}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="w-full text-neutral-600 text-sm sm:text-base font-medium leading-relaxed text-center"
-          >
-            Tertarik untuk hire, kolaborasi, atau sekadar sapa? <br className="hidden sm:inline" />
-            Inbox saya selalu terbuka untuk Anda.
-          </motion.p>
+            </motion.h2>
 
-          {/* Kotak Email Utama (Border hitam 3px, hard shadow 4px, tombol salin interaktif) */}
+            {/* Subtitle */}
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            >
+              A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+            </motion.p>
+          </div>
+
+          {/* Main Card */}
           <motion.div
             variants={fadeUp}
             custom={3}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mt-8 mb-6 w-full sm:mt-10 sm:mb-8"
+            className="w-full border-[3px] border-[#111] bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-[6px_6px_0px_0px_#111] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200 flex flex-col gap-4 sm:gap-5"
           >
-            <div className="border-[3px] border-[#111] bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-[4px_4px_0px_0px_#111] sm:shadow-[5px_5px_0px_0px_#111] hover:shadow-[7px_7px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 transition-all duration-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Kotak Email Utama */}
+            <div className="border-[2.5px] border-[#111] bg-neutral-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-[3px_3px_0px_0px_#111] flex flex-col sm:flex-row items-center justify-between gap-4">
               {/* Email Content */}
               <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto justify-start">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-yellow-400 border-[2.5px] border-[#111] shadow-[2px_2px_0px_0px_#111] flex items-center justify-center flex-shrink-0 text-[#111]">
@@ -186,40 +185,35 @@ export default function ContactSection() {
                 )}
               </button>
             </div>
-          </motion.div>
 
-          {/* Kartu Tombol Aksi (GitHub, LinkedIn, WhatsApp) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 w-full">
-            {actionCards.map((btn, idx) => (
-              <motion.a
-                key={btn.label}
-                href={btn.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={fadeUp}
-                custom={4 + idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="group flex items-center justify-between p-3.5 sm:p-4 bg-white border-[3px] border-[#111] rounded-2xl shadow-[4px_4px_0px_0px_#111] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0px_0px_#111] transition-all duration-200 no-underline cursor-pointer"
-              >
-                <div className="flex items-center gap-2.5 sm:gap-3">
-                  <div
-                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl border-[2px] border-[#111] shadow-[2px_2px_0px_0px_#111] flex items-center justify-center flex-shrink-0 ${btn.iconBg}`}
-                  >
-                    {btn.icon}
+            {/* Kartu Tombol Aksi (GitHub, LinkedIn, Instagram) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 w-full">
+              {actionCards.map((btn) => (
+                <a
+                  key={btn.label}
+                  href={btn.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-3.5 sm:p-4 bg-neutral-50 hover:bg-white border-[2.5px] border-[#111] rounded-xl sm:rounded-2xl shadow-[3px_3px_0px_0px_#111] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-200 no-underline cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <div
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl border-[2px] border-[#111] shadow-[2px_2px_0px_0px_#111] flex items-center justify-center flex-shrink-0 ${btn.iconBg}`}
+                    >
+                      {btn.icon}
+                    </div>
+                    <span
+                      className="font-black text-xs sm:text-sm tracking-wider text-[#111] uppercase"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      {btn.label}
+                    </span>
                   </div>
-                  <span
-                    className="font-black text-xs sm:text-sm tracking-wider text-[#111] uppercase"
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
-                  >
-                    {btn.label}
-                  </span>
-                </div>
-                <HiArrowTopRightOnSquare className="w-4 h-4 text-neutral-400 group-hover:text-[#111] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-150 flex-shrink-0 ml-1" />
-              </motion.a>
-            ))}
-          </div>
+                  <HiArrowTopRightOnSquare className="w-4 h-4 text-neutral-400 group-hover:text-[#111] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-150 flex-shrink-0 ml-1" />
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

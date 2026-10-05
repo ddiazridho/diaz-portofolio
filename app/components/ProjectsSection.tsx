@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HiArrowTopRightOnSquare } from "react-icons/hi2";
-import { SiGithub, SiPython, SiDocker, SiFastapi, SiScikitlearn } from "react-icons/si";
-import { BotMessageSquare } from "lucide-react";
+import { SiGithub, SiPython, SiDocker, SiFastapi, SiHuggingface, SiLaravel, SiPostgresql } from "react-icons/si";
+import { RiOpenaiFill } from "react-icons/ri";
+import { Bot } from "lucide-react";
 
 interface ProjectTag {
   name: string;
@@ -33,26 +34,28 @@ const projects: Project[] = [
   {
     title: "JobFit AI",
     description:
-      "AI-driven CV analysis platform designed to evaluate skill compatibility with industry benchmarks, identify competency gaps, and provide targeted career roadmaps.",
+      "A CV analysis tool that extracts your skills and matches them against 1.3M real LinkedIn jobs to show where you stand and what skills you need next.",
     thumbnail: "/JOBFIT.png",
     tags: [
       { name: "Python", icon: <SiPython className="w-3.5 h-3.5 text-[#3776AB]" /> },
-      { name: "Docker", icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" /> },
       { name: "FastAPI", icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" /> },
-      { name: "Scikit-learn", icon: <SiScikitlearn className="w-3.5 h-3.5 text-[#F7931E]" /> },
+      { name: "Hugging Face", icon: <SiHuggingface className="w-3.5 h-3.5 text-[#FFD21E]" /> },
+      { name: "Laravel", icon: <SiLaravel className="w-3.5 h-3.5 text-[#FF2D20]" /> },
     ],
     github: "https://github.com/ddiazridho/jobfit-ai-api",
   },
   {
     title: "OpenClaw-IG Integration",
     description:
-      "Intelligent Instagram DM automation bot powered by LLMs. Autonomously crawls, indexes, and recommends active student competitions and educational opportunities via direct messages.",
+      "An Instagram DM bot built on OpenClaw and Meta Webhooks that answers questions about competitions and opportunities info. This project is still in development phase",
     thumbnail: "/OPENCLAW-IG.png",
     tags: [
       { name: "Python", icon: <SiPython className="w-3.5 h-3.5 text-[#3776AB]" /> },
       { name: "Docker", icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" /> },
       { name: "FastAPI", icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" /> },
-      { name: "LLM", icon: <BotMessageSquare className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" /> },
+      { name: "PostgreSQL", icon: <SiPostgresql className="w-3.5 h-3.5 text-[#4169E1]" /> },
+      { name: "OpenClaw", icon: <Bot className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" /> },
+      { name: "OpenAI API", icon: <RiOpenaiFill className="w-3.5 h-3.5 text-[#10A37F]" /> },
     ],
     github: "https://github.com/ddiazridho/instagram_openclaw",
   },
@@ -77,7 +80,7 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
-              Projects <span className="opacity-40 font-normal">|</span> (02)
+              Projects <span className="opacity-40 font-normal">|</span> (03)
             </span>
           </motion.div>
 
