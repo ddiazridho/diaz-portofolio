@@ -33,7 +33,7 @@ const actionCards = [
     label: "LINKEDIN",
     icon: <FaLinkedin className="w-5 h-5 text-[#0A66C2]" />,
     iconBg: "bg-blue-100",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/diaz-ridho-yuristianto/",
   },
   {
     label: "WHATSAPP",

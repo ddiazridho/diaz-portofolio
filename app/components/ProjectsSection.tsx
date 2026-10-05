@@ -1,61 +1,60 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { HiArrowTopRightOnSquare } from "react-icons/hi2";
-import { SiGithub } from "react-icons/si";
-import TechBadge from "./ui/TechBadge";
+import { SiGithub, SiPython, SiDocker, SiFastapi, SiScikitlearn } from "react-icons/si";
+import { BotMessageSquare } from "lucide-react";
 
-type Project = {
+interface ProjectTag {
+  name: string;
+  icon?: React.ReactNode;
+}
+
+interface Project {
   title: string;
   description: string;
-  tags: string[];
-  gradient: string;
-  emoji: string;
-  github?: string;
+  thumbnail: string;
+  tags: ProjectTag[];
+  github: string;
   live?: string;
-  featured?: boolean;
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+  }),
 };
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "JobFit AI",
     description:
-      "Platform belanja online full-stack dengan fitur autentikasi, keranjang belanja, payment gateway, dan dashboard admin real-time.",
-    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-    gradient: "linear-gradient(135deg, #1877F2 0%, #0D5DBF 100%)",
-    emoji: "🛒",
-    github: "https://github.com",
-    live: "https://example.com",
-    featured: true,
+      "AI-driven CV analysis platform designed to evaluate skill compatibility with industry benchmarks, identify competency gaps, and provide targeted career roadmaps.",
+    thumbnail: "/JOBFIT.png",
+    tags: [
+      { name: "Python", icon: <SiPython className="w-3.5 h-3.5 text-[#3776AB]" /> },
+      { name: "Docker", icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" /> },
+      { name: "FastAPI", icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn className="w-3.5 h-3.5 text-[#F7931E]" /> },
+    ],
+    github: "https://github.com/ddiazridho/jobfit-ai-api",
   },
   {
-    title: "Task Management App",
+    title: "OpenClaw-IG Integration",
     description:
-      "Aplikasi manajemen tugas kolaboratif dengan drag-and-drop, real-time updates menggunakan WebSocket, dan dark mode.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    gradient: "linear-gradient(135deg, #FF6B35 0%, #FF3B30 100%)",
-    emoji: "📋",
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "AI Chat Dashboard",
-    description:
-      "Dashboard interaktif untuk visualisasi data percakapan AI dengan charts, filter real-time, dan export laporan.",
-    tags: ["Next.js", "Python", "OpenAI API", "Tailwind"],
-    gradient: "linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%)",
-    emoji: "🤖",
-    github: "https://github.com",
-  },
-  {
-    title: "Design System UI Kit",
-    description:
-      "Komponen library React yang reusable dengan Storybook documentation, dark mode support, dan a11y compliance.",
-    tags: ["React", "TypeScript", "Storybook", "CSS"],
-    gradient: "linear-gradient(135deg, #00C853 0%, #00897B 100%)",
-    emoji: "🎨",
-    github: "https://github.com",
-    live: "https://example.com",
+      "Intelligent Instagram DM automation bot powered by LLMs. Autonomously crawls, indexes, and recommends active student competitions and educational opportunities via direct messages.",
+    thumbnail: "/OPENCLAW-IG.png",
+    tags: [
+      { name: "Python", icon: <SiPython className="w-3.5 h-3.5 text-[#3776AB]" /> },
+      { name: "Docker", icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" /> },
+      { name: "FastAPI", icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" /> },
+      { name: "LLM", icon: <BotMessageSquare className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" /> },
+    ],
+    github: "https://github.com/ddiazridho/instagram_openclaw",
   },
 ];
 
@@ -63,102 +62,117 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="w-full scroll-mt-24"
+      className="w-full scroll-mt-24 relative overflow-hidden"
       style={{ background: "var(--color-surface)", borderTop: "1.5px solid var(--color-border)" }}
     >
       <div className="section">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col gap-3 mb-14"
-        >
-          <span
-            className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block self-start"
-            style={{ background: "var(--color-red)", color: "white" }}
+        <div className="flex flex-col items-center justify-center text-center mb-10 lg:mb-12">
+          {/* Counter Badge */}
+          <motion.div
+            variants={fadeUp}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            Portofolio
-          </span>
-          <h2 className="section-title">
-            Proyek <span>Pilihan</span>
-          </h2>
-          <p
-            className="text-base max-w-lg"
-            style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-inter)" }}
-          >
-            Beberapa karya terbaik yang pernah saya kerjakan
-          </p>
-        </motion.div>
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+              Projects <span className="opacity-40 font-normal">|</span> (02)
+            </span>
+          </motion.div>
 
-        {/* Project grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
+          {/* Section Title: Selected Works */}
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            THINGS I`VE BUILT <br />
+
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeUp}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+          >
+            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+          </motion.p>
+        </div>
+
+        {/* Grid 2 Kolom (Desktop) / 1 Kolom (Mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+          {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="card overflow-hidden group cursor-pointer"
-              style={project.featured ? { gridColumn: "span 2" } : {}}
+              variants={fadeUp}
+              custom={3 + index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="border-[3px] border-[#111] bg-white rounded-2xl sm:rounded-3xl shadow-[6px_6px_0px_0px_#111] p-5 sm:p-6 lg:p-7 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200 flex flex-col h-full group"
             >
-              {/* Color banner */}
-              <div
-                className="flex items-center justify-between px-6 py-5"
-                style={{ background: project.gradient }}
-              >
-                <span className="text-4xl">{project.emoji}</span>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-colors text-white"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label="GitHub"
-                    >
-                      <SiGithub className="w-4 h-4" />
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-colors text-white"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label="Live demo"
-                    >
-                      <HiArrowTopRightOnSquare className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
+              {/* Thumbnail Container */}
+              <div className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl border-[2.5px] border-[#111] overflow-hidden bg-neutral-100 shadow-[3px_3px_0px_0px_#111] mb-5">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col gap-3">
-                <h3
-                  className="text-lg font-bold group-hover:text-blue-600 transition-colors"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
-                >
-                  {project.title}
-                </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-inter)" }}
-                >
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {project.tags.map((tag) => (
-                    <TechBadge key={tag} name={tag} variant="outline" />
-                  ))}
-                </div>
+              {/* Judul Project */}
+              <h3
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] mb-2.5"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                {project.title}
+              </h3>
+
+              {/* Deskripsi Project */}
+              <p className="text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed mb-5">
+                {project.description}
+              </p>
+
+              {/* Tags Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag) => (
+                  <div
+                    key={tag.name}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-neutral-50 text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
+                  >
+                    {tag.icon && (
+                      <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
+                        {tag.icon}
+                      </span>
+                    )}
+                    <span>{tag.name}</span>
+                  </div>
+                ))}
               </div>
+
+              {/* Tombol selalu bawah (mt-auto / tombol selalu bawah) */}
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border-[2.5px] border-[#111] bg-yellow-400 hover:bg-yellow-300 text-[#111] font-black text-xs sm:text-sm uppercase tracking-wider shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                <SiGithub className="w-4 h-4 text-[#111]" />
+                <span>GITHUB</span>
+                <HiArrowTopRightOnSquare className="w-4 h-4 stroke-[2]" />
+              </a>
             </motion.article>
           ))}
         </div>

@@ -11,16 +11,20 @@ import {
   SiPandas,
   SiDocker,
   SiHuggingface,
+  SiMysql,
+  SiPostgresql,
+  SiGit,
 } from "react-icons/si";
 import {
   Wrench,
   Bot,
   FileSearch,
   Layers,
-  Sparkles,
   BrainCircuit,
   Network,
   ArrowLeftRight,
+  BotMessageSquare,
+  CloudLightning,
 } from "lucide-react";
 
 interface SkillItem {
@@ -57,6 +61,18 @@ const toolsAndFrameworks: SkillItem[] = [
     name: "Pandas",
     icon: <SiPandas className="w-4 h-4 text-[#150458]" />,
   },
+  {
+    name: "MySQL",
+    icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql className="w-4 h-4 text-[#4169E1]" />,
+  },
+  {
+    name: "Git",
+    icon: <SiGit className="w-4 h-4 text-[#F05032]" />,
+  },
 ];
 
 const aiAndMlOps: SkillItem[] = [
@@ -74,7 +90,7 @@ const aiAndMlOps: SkillItem[] = [
   },
   {
     name: "LLM",
-    icon: <Sparkles className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <BotMessageSquare className="w-4 h-4 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Machine Learning",
@@ -92,6 +108,10 @@ const aiAndMlOps: SkillItem[] = [
     name: "Vector Search",
     icon: <Layers className="w-4 h-4 stroke-[2.5] text-[#111]" />,
   },
+  {
+    name: "Pretrained API",
+    icon: <CloudLightning className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+  },
 ];
 
 const fadeUp = {
@@ -106,6 +126,7 @@ const fadeUp = {
 export default function SkillsSection() {
   return (
     <section id="skills" className="w-full scroll-mt-24" style={{ background: "var(--color-bg)" }}>
+
       <div className="section">
         {/* ── Neo-Brutalist Editorial Header ── */}
         <motion.div

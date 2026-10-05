@@ -35,9 +35,9 @@ export default function Footer() {
         {/* Social icons */}
         <div className="flex items-center gap-4">
           {[
-            { icon: <SiGithub className="w-5 h-5" />,   href: "https://github.com/ddiazridho", label: "GitHub" },
-            { icon: <FaLinkedin className="w-5 h-5" />, href: "https://linkedin.com",           label: "LinkedIn" },
-            { icon: <HiEnvelope className="w-5 h-5" />, href: "mailto:hello@diazridho.dev",     label: "Email" },
+            { icon: <SiGithub className="w-5 h-5" />, href: "https://github.com/ddiazridho", label: "GitHub" },
+            { icon: <FaLinkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/diaz-ridho-yuristianto/", label: "LinkedIn" },
+            { icon: <HiEnvelope className="w-5 h-5" />, href: "mailto:hello@diazridho.dev", label: "Email" },
           ].map((s) => (
             <a
               key={s.label}
