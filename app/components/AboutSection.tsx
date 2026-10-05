@@ -32,7 +32,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
-              About me<span className="opacity-40 font-normal">|</span> (01)
+              About me<span className="opacity-40 font-normal">|</span> (03)
             </span>
           </motion.div>
 
@@ -79,7 +79,7 @@ export default function AboutSection() {
               className="w-full relative"
             >
               <div style={{
-                padding: '12px',
+                padding: '15px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '10px'
@@ -127,7 +127,7 @@ export default function AboutSection() {
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-yellow-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   {/* Card */}
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -147,7 +147,7 @@ export default function AboutSection() {
                 <div className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-blue-300 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -193,7 +193,7 @@ export default function AboutSection() {
                 <div className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-purple-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -214,7 +214,7 @@ export default function AboutSection() {
                 <div className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-cyan-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -235,7 +235,7 @@ export default function AboutSection() {
                 <div className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-pink-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
@@ -255,7 +255,7 @@ export default function AboutSection() {
                 <div className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-orange-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
-                    padding: '12px',
+                    padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'

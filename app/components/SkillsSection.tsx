@@ -181,7 +181,7 @@ export default function SkillsSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
             style={{
-              padding: '12px',
+              padding: '20px',
               display: 'flex',
               flexDirection: 'column',
               gap: '12px'
@@ -226,7 +226,7 @@ export default function SkillsSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
             style={{
-              padding: '12px',
+              padding: '20px',
               display: 'flex',
               flexDirection: 'column',
               gap: '12px'

@@ -130,7 +130,7 @@ export default function ProjectsSection() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover object-top"
                 />
               </div>
 
