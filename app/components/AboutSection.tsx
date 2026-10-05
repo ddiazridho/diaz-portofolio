@@ -7,7 +7,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
   }),
 };
 
@@ -23,11 +23,11 @@ export default function AboutSection() {
 
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center mb-20 lg:mb-28">
-          <motion.div variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          {/* <motion.div variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <span className="inline-block px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-4 uppercase">
               Background Story
             </span>
-          </motion.div>
+          </motion.div> */}
           <motion.h2 variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             GET TO KNOW ME
           </motion.h2>

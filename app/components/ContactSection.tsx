@@ -7,9 +7,9 @@ import { SiGithub, SiX } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa6";
 
 const socials = [
-  { icon: <SiGithub />,   label: "GitHub",   href: "https://github.com/ddiazridho" },
-  { icon: <FaLinkedin />, label: "LinkedIn",  href: "https://linkedin.com" },
-  { icon: <SiX />,        label: "X (Twitter)", href: "https://x.com" },
+  { icon: <SiGithub />, label: "GitHub", href: "https://github.com/ddiazridho" },
+  { icon: <FaLinkedin />, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: <SiX />, label: "X (Twitter)", href: "https://x.com" },
   { icon: <HiEnvelope className="w-5 h-5" />, label: "Email", href: "mailto:hello@diazridho.dev" },
 ];
 
