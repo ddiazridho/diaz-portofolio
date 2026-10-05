@@ -111,18 +111,7 @@ export default function Navbar() {
         </ul>
 
         {/* Right actions */}
-        <div style={{ paddingRight: '24px' }} className="flex items-center gap-2 shrink-0">
-          {/* CV — icon-only on mobile */}
-          <a
-            href="/cv.pdf"
-            download
-            aria-label="Download CV"
-            className="flex items-center gap-1.5 h-10 px-4 rounded-full border-2 border-[#111] bg-white font-semibold text-sm transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111]"
-          >
-            <HiArrowDownTray className="w-4 h-4" />
-            <span className="hidden md:inline text-[11px]">CV</span>
-          </a>
-
+        <div className="flex items-center gap-2 shrink-0">
           {/* Hire Me */}
           <a
             href="#contact"

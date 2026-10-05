@@ -5,35 +5,35 @@
 ───────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg:           #F5F5F5;
-  --color-surface:      #FFFFFF;
-  --color-text:         #111111;
-  --color-text-muted:   #666666;
-  --color-border:       #E0E0E0;
+  --color-bg: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-text: #111111;
+  --color-text-muted: #666666;
+  --color-border: #E0E0E0;
 
-  --color-blue:         #1877F2;
-  --color-blue-dark:    #0D5DBF;
-  --color-yellow:       #FFD600;
-  --color-yellow-dark:  #E6BF00;
-  --color-red:          #FF3B30;
-  --color-green:        #00C853;
-  --color-orange:       #FF6B35;
+  --color-blue: #1877F2;
+  --color-blue-dark: #0D5DBF;
+  --color-yellow: #FFD600;
+  --color-yellow-dark: #E6BF00;
+  --color-red: #FF3B30;
+  --color-green: #00C853;
+  --color-orange: #FF6B35;
 
   /* Typography — resolved from next/font variables injected in layout.tsx */
-  --font-hero:   var(--font-space-grotesk), 'Space Grotesk', sans-serif;
-  --font-body:   var(--font-inter), 'Inter', sans-serif;
+  --font-hero: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-body: var(--font-inter), 'Inter', sans-serif;
 
   /* Spacing */
-  --radius-sm:   6px;
-  --radius-md:   12px;
-  --radius-lg:   20px;
-  --radius-xl:   28px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.14);
-  --shadow-btn: 0 4px 14px rgba(24,119,242,0.35);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.14);
+  --shadow-btn: 0 4px 14px rgba(24, 119, 242, 0.35);
 }
 
 /* ─────────────────────────────────────
@@ -48,11 +48,7 @@
 /* ─────────────────────────────────────
    RESET & BASE
 ───────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -73,7 +69,11 @@ body {
 /* ─────────────────────────────────────
    TYPOGRAPHY
 ───────────────────────────────────── */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-hero);
   font-weight: 700;
   line-height: 1.1;
@@ -86,77 +86,168 @@ h1, h2, h3, h4, h5 {
 
 /* Floating sticker bob */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(var(--sticker-rotate, -3deg)); }
-  50%       { transform: translateY(-10px) rotate(var(--sticker-rotate, -3deg)); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(var(--sticker-rotate, -3deg));
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(var(--sticker-rotate, -3deg));
+  }
 }
 
 /* Gentle float variant for right-leaning stickers */
 @keyframes float-alt {
-  0%, 100% { transform: translateY(0px) rotate(var(--sticker-rotate, 4deg)); }
-  50%       { transform: translateY(-8px) rotate(var(--sticker-rotate, 4deg)); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(var(--sticker-rotate, 4deg));
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(var(--sticker-rotate, 4deg));
+  }
 }
 
 /* Green dot pulse */
 @keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
-  50%       { box-shadow: 0 0 0 6px rgba(0, 200, 83, 0); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 200, 83, 0);
+  }
 }
 
 /* Scroll reveal fade-up (used by framer-motion too) */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Shimmer on cards */
 @keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Bounce click-me sticker */
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(0) rotate(-6deg); }
-  40%       { transform: translateY(-14px) rotate(-3deg); }
-  60%       { transform: translateY(-7px) rotate(-6deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+
+  40% {
+    transform: translateY(-14px) rotate(-3deg);
+  }
+
+  60% {
+    transform: translateY(-7px) rotate(-6deg);
+  }
 }
 
 /* Window card entrance */
 @keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hero left card entrance */
 @keyframes slide-in-left {
-  from { opacity: 0; transform: translateX(-40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hero photo slide in from left */
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hero text stagger fade up */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─────────────────────────────────────
    ANIMATION UTILITY CLASSES
 ───────────────────────────────────── */
-.animate-float         { animation: float 4s ease-in-out infinite; }
-.animate-float-alt     { animation: float-alt 4.5s ease-in-out infinite; }
-.animate-bounce-slow   { animation: bounce-slow 2.8s ease-in-out infinite; }
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-alt {
+  animation: float-alt 4.5s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.8s ease-in-out infinite;
+}
 
 /* animation-fill-mode shorthand used by Tailwind arbitrary values */
-[style*="animation"] { animation-fill-mode: both; }
-.animate-pulse-green   { animation: pulse-green 2s ease-in-out infinite; }
-.animate-slide-left    { animation: slide-in-left 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
-.animate-slide-right   { animation: slide-in-right 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s forwards; opacity: 0; }
+[style*="animation"] {
+  animation-fill-mode: both;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+.animate-slide-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  opacity: 0;
+}
 
 /* ─────────────────────────────────────
    COMMON COMPONENT STYLES
@@ -200,7 +291,10 @@ h1, h2, h3, h4, h5 {
   background: var(--color-yellow-dark);
 }
 
-.btn-primary:active { transform: translateY(0); box-shadow: none; }
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
 
 .btn-secondary {
   display: inline-flex;
@@ -223,10 +317,13 @@ h1, h2, h3, h4, h5 {
 .btn-secondary:hover {
   transform: translateY(-2px);
   box-shadow: 4px 4px 0px var(--color-text);
-  background: rgba(0,0,0,0.04);
+  background: rgba(0, 0, 0, 0.04);
 }
 
-.btn-secondary:active { transform: translateY(0); box-shadow: none; }
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
 
 /* Section wrapper — max-width matches navbar pill (960px) */
 .section {
@@ -251,7 +348,19 @@ h1, h2, h3, h4, h5 {
 /* ─────────────────────────────────────
    SCROLLBAR
 ───────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #bbb; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}

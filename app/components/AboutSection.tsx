@@ -36,8 +36,6 @@ export default function AboutSection() {
           </motion.p>
         </div>
 
-        {/* Explicit spacer to guarantee layout distance */}
-        <div className="w-full h-12 lg:h-18"></div>
 
         {/* Grid Layout (Matches Hero: 5 cols left, 7 cols right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
