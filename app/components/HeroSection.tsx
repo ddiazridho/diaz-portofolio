@@ -102,7 +102,7 @@ export default function HeroSection() {
               </h1>
               {/* Squiggle under name */}
               <div className="flex justify-center lg:justify-start">
-                <SquiggleUnderline />
+                {/* <SquiggleUnderline /> */}
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 /**
@@ -10,10 +10,11 @@ import Image from "next/image";
  * to the very bottom of the viewport. Loops infinitely.
  *
  * Micro-interaction on click:
- * 1. Recoil/tickle phase: steps backward while wiggling/jiggling.
- * 2. Short dash phase: sudden quick forward sprint.
- * 3. Reset: smoothly restores to original position, ready to be clicked again.
- * Strictly preserves orientation (no rotate or flip).
+ * 1. Tickle/wiggle phase: squishy, energetic caterpillar jiggle/bounce.
+ * 2. Sudden forward dash: sprints forward in the walking direction (+45px).
+ * 3. Continues moving forward smoothly without ever stepping backward.
+ * Strictly preserves orientation (no rotate, no flip).
+ * Instant response on every single click with no cooldown.
  */
 interface WalkingMascotProps {
   src?: string;
@@ -28,16 +29,35 @@ export default function WalkingMascot({
   duration = 32,
   facingRight = true,
 }: WalkingMascotProps) {
-  const [isReacting, setIsReacting] = useState(false);
-  const [animKey, setAnimKey] = useState(0);
+  const [bonusX, setBonusX] = useState(0);
+  const [isWiggling, setIsWiggling] = useState(false);
+  const wiggleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const flipX = facingRight ? 1 : -1;
 
   const handleLarvaClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setIsReacting(true);
-    setAnimKey((prev) => prev + 1);
+
+    // 1. Advance forward immediately on every single click (+45px)
+    setBonusX((prev) => prev + 45);
+
+    // 2. Restart squishy wiggle without remounting DOM elements
+    setIsWiggling(false);
+    requestAnimationFrame(() => {
+      setIsWiggling(true);
+    });
+
+    if (wiggleTimerRef.current) clearTimeout(wiggleTimerRef.current);
+    wiggleTimerRef.current = setTimeout(() => {
+      setIsWiggling(false);
+    }, 450);
   };
+
+  useEffect(() => {
+    return () => {
+      if (wiggleTimerRef.current) clearTimeout(wiggleTimerRef.current);
+    };
+  }, []);
 
   return (
     <>
@@ -82,64 +102,15 @@ export default function WalkingMascot({
           100% { transform: scaleX(${flipX}) translateY(0px)  rotate(0deg);    }
         }
 
-        /*
-         * Sequential click animation for Larva:
-         * 1. Recoil / tickle phase: stepping backward a few pixels with a brief wiggle/jiggle
-         * 2. Short dash phase: quick, sudden forward sprint for a short distance
-         * 3. Reset phase: smoothly restore the sprite to its original position
-         * STRICT: Keep exact same orientation (no rotation, no flipping).
-         */
-        @keyframes wm-larva-interaction {
-          /* 1. Recoil/tickle phase: stepping backward with wiggle/jiggle */
-          0% {
-            transform: translate3d(0, 0, 0);
-          }
-          6% {
-            transform: translate3d(-4px, -2px, 0);
-          }
-          12% {
-            transform: translate3d(-8px, 3px, 0);
-          }
-          18% {
-            transform: translate3d(-14px, -3px, 0);
-          }
-          24% {
-            transform: translate3d(-10px, 2px, 0);
-          }
-          30% {
-            transform: translate3d(-16px, -2px, 0);
-          }
-          36% {
-            transform: translate3d(-12px, 1px, 0);
-          }
-          42% {
-            transform: translate3d(-15px, 0, 0);
-          }
-
-          /* 2. Short dash phase: sudden quick forward sprint */
-          48% {
-            transform: translate3d(10px, 0, 0);
-          }
-          56% {
-            transform: translate3d(48px, -2px, 0);
-          }
-          64% {
-            transform: translate3d(58px, 0, 0);
-          }
-          72% {
-            transform: translate3d(54px, 0, 0);
-          }
-
-          /* 3. Reset phase: smoothly restore sprite to original position */
-          84% {
-            transform: translate3d(24px, 0, 0);
-          }
-          94% {
-            transform: translate3d(6px, 0, 0);
-          }
-          100% {
-            transform: translate3d(0, 0, 0);
-          }
+        /* ─── Tickle/wiggle: energetic squishy bounce while advancing ─── */
+        @keyframes wm-tickle-wiggle {
+          0%   { transform: translateY(0px)  scale(1, 1); }
+          15%  { transform: translateY(-7px) scale(1.12, 0.88); }
+          30%  { transform: translateY(-1px) scale(0.92, 1.08); }
+          45%  { transform: translateY(-8px) scale(1.10, 0.90); }
+          60%  { transform: translateY(-2px) scale(0.95, 1.05); }
+          75%  { transform: translateY(-4px) scale(1.05, 0.95); }
+          100% { transform: translateY(0px)  scale(1, 1); }
         }
 
         /*
@@ -158,7 +129,15 @@ export default function WalkingMascot({
           overflow: visible;
         }
 
-        /* Clickable hit-box */
+        /* Forward dash shift: smoothly sprints forward without ever going backward */
+        .wm-dash-shift {
+          display: inline-block;
+          line-height: 0;
+          transition: transform 420ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+          will-change: transform;
+        }
+
+        /* Clickable hit-box: shifts along with dash so it is always 100% accurate */
         .wm-clickable {
           pointer-events: auto;
           cursor: pointer;
@@ -166,20 +145,22 @@ export default function WalkingMascot({
           line-height: 0;
           outline: none;
           user-select: none;
+          -webkit-user-select: none;
+          -webkit-user-drag: none;
           -webkit-tap-highlight-color: transparent;
-          padding: 8px;
-          margin: -8px;
+          padding: 12px;
+          margin: -12px;
         }
 
-        /* Middle container: executes click reaction */
-        .wm-reacting {
-          animation: wm-larva-interaction 1.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-          will-change: transform;
+        /* Wiggle container */
+        .wm-wiggling {
+          animation: wm-tickle-wiggle 450ms ease-in-out;
+          transform-origin: center bottom;
         }
 
         /*
          * Inner: handles the walk-cycle bob.
-         * During reaction, walk cycle rotation is paused to preserve strict orientation.
+         * During wiggle/dash, walk cycle rotation is paused to preserve strict orientation.
          */
         .wm-inner {
           display: flex;
@@ -189,7 +170,7 @@ export default function WalkingMascot({
           will-change: transform;
         }
 
-        .wm-inner-reacting {
+        .wm-inner-wiggling {
           animation: none;
           transform: scaleX(${flipX});
         }
@@ -203,42 +184,58 @@ export default function WalkingMascot({
           image-rendering: pixelated;
           image-rendering: crisp-edges;
           filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.28));
+          pointer-events: none;
+          user-select: none;
+          -webkit-user-drag: none;
         }
       `}</style>
 
       {/* Outer: horizontal traverse */}
-      <div className="wm-outer" aria-hidden="false">
-        {/* Clickable target */}
+      <div
+        className="wm-outer"
+        aria-hidden="false"
+        onAnimationIteration={(e) => {
+          // Strictly only reset bonusX when the 32s traverse loop finishes (offscreen),
+          // NOT on inner 3s walk-cycle bob iterations!
+          if (e.animationName === "wm-traverse") {
+            setBonusX(0);
+          }
+        }}
+      >
+        {/* Forward dash shift: wraps clickable target so hitbox moves WITH the sprite */}
         <div
-          role="button"
-          tabIndex={0}
-          aria-label="Red Larva mascot"
-          onClick={handleLarvaClick}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleLarvaClick(e as unknown as React.MouseEvent);
-            }
-          }}
-          className="wm-clickable"
+          className="wm-dash-shift"
+          style={{ transform: `translate3d(${bonusX}px, 0, 0)` }}
         >
-          {/* Reaction container (recoil -> dash -> restore) */}
+          {/* Clickable target */}
           <div
-            key={animKey}
-            className={isReacting ? "wm-reacting" : ""}
-            onAnimationEnd={() => setIsReacting(false)}
+            role="button"
+            tabIndex={0}
+            aria-label="Red Larva mascot"
+            onClick={handleLarvaClick}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleLarvaClick(e as unknown as React.MouseEvent);
+              }
+            }}
+            className="wm-clickable"
           >
-            {/* Inner: walk-cycle bob */}
-            <div className={`wm-inner ${isReacting ? "wm-inner-reacting" : ""}`}>
-              <Image
-                src={src}
-                alt="Walking mascot"
-                width={width}
-                height={width}
-                className="wm-img"
-                priority={false}
-                unoptimized
-              />
+            {/* Wiggle container (no key remounting) */}
+            <div className={isWiggling ? "wm-wiggling" : ""}>
+              {/* Inner: walk-cycle bob */}
+              <div className={`wm-inner ${isWiggling ? "wm-inner-wiggling" : ""}`}>
+                <Image
+                  src={src}
+                  alt="Walking mascot"
+                  width={width}
+                  height={width}
+                  className="wm-img"
+                  priority={false}
+                  unoptimized
+                  draggable={false}
+                />
+              </div>
             </div>
           </div>
         </div>
