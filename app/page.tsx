@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import MikasaWidget from "./components/MikasaWidget";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
@@ -12,7 +11,6 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <MikasaWidget />
         <HeroSection />
         <AboutSection />
         <SkillsSection />

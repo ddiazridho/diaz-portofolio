@@ -107,7 +107,7 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
-            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+            A selection of end-to-end applications, experiments, and production-ready systems I've built.
           </motion.p>
         </div>
 

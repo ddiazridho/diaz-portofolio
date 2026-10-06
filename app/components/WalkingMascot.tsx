@@ -23,8 +23,8 @@ interface WalkingMascotProps {
 }
 
 export default function WalkingMascot({
-  src = "/ATTACK TITAN PIXEL.png",
-  width = 120,
+  src = "/Red Larva.png",
+  width = 10,
   duration = 32,
   facingRight = true,
 }: WalkingMascotProps) {
@@ -88,7 +88,7 @@ export default function WalkingMascot({
         /* Pixel-crisp image — no blur, no optimiser softening */
         .wm-img {
           display: block;
-          width: 130px;
+          width: 35px;
           height: auto;
           /* Keep sprite glued to the very bottom */
           vertical-align: bottom;

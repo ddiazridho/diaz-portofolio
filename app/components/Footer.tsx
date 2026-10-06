@@ -24,13 +24,6 @@ export default function Footer() {
           Diaz<span style={{ color: "var(--color-blue)" }}>.</span>
         </span>
 
-        {/* Copyright */}
-        <p
-          className="text-xs text-center"
-          style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-inter)" }}
-        >
-          © {year} Diaz Ridho. Dibuat dengan ❤️ dan ☕
-        </p>
 
         {/* Social icons */}
         <div className="flex items-center gap-4">

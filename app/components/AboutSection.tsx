@@ -32,7 +32,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
-              About me<span className="opacity-40 font-normal">|</span> (03)
+              About me<span className="opacity-40 font-normal">|</span> (01)
             </span>
           </motion.div>
 
@@ -59,7 +59,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
-            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+            The experiences, education, and milestones behind the systems I design and build.
           </motion.p>
         </div>
 
@@ -134,7 +134,7 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>COMPUTER ENGINEERING</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-blue-300 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2025 - Present</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-blue-300 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">Present</span>
                     </div>
                     <p className="text-blue-600 font-bold text-xs mb-2">Universitas Diponegoro</p>
                     <p className="text-xs text-neutral-600 font-medium leading-relaxed">
@@ -200,7 +200,7 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>TREASURER II</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-purple-400 text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2024 – Present</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-purple-400 text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 - 2023</span>
                     </div>
                     <p className="text-purple-600 font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
@@ -242,7 +242,7 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>GOOGLE STUDENT AMBASSADOR</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-pink-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2023</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-pink-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
                     </div>
                     <p className="text-pink-600 font-bold text-xs mb-2">Google Indonesia</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
@@ -262,7 +262,7 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>AI ENGINEER COHORT</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-orange-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 – 2023</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-orange-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
                     </div>
                     <p className="text-orange-600 font-bold text-xs mb-2">Dicoding</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">

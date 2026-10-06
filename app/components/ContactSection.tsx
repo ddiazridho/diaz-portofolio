@@ -122,7 +122,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
             >
-              Interested in hiring, collaborating on AI projects, or just having a chat? My inbox is always open.
+              Interested in hiring, collaborating on AI/ML projects, or just having a chat?My inbox is always open.
             </motion.p>
           </div>
 
@@ -147,7 +147,7 @@ export default function ContactSection() {
                   </span>
                   <a
                     href={`mailto:${EMAIL_ADDRESS}`}
-                    className="text-lg sm:text-xl md:text-2xl font-black text-[#111] hover:text-[#1877F2] transition-colors truncate"
+                    className="text-base sm:text-lg md:text-xl font-black text-[#111] hover:text-[#1877F2] transition-colors truncate"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                     title={EMAIL_ADDRESS}
                   >
@@ -189,14 +189,14 @@ export default function ContactSection() {
               <span className="text-xs font-black uppercase tracking-wider text-neutral-500">
                 Social Profiles
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto">
+              <div className="flex items-center justify-center sm:justify-end gap-1.5 sm:gap-3 w-full sm:w-auto flex-nowrap">
                 {actionCards.map((btn) => (
                   <a
                     key={btn.label}
                     href={btn.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border-[2px] border-[#111] bg-neutral-50 hover:bg-yellow-300 text-[#111] font-black text-xs uppercase tracking-wider shadow-[2.5px_2.5px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none whitespace-nowrap"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl border-[2px] border-[#111] bg-neutral-50 hover:bg-yellow-300 text-[#111] font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-[2px_2px_0px_0px_#111] sm:shadow-[2.5px_2.5px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none whitespace-nowrap"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                   >
                     <span className="flex items-center justify-center flex-shrink-0">{btn.icon}</span>

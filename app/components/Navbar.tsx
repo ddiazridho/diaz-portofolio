@@ -2,19 +2,19 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { HiArrowDownTray, HiEnvelope } from "react-icons/hi2";
 import {
   HiOutlineUser,
-  HiOutlineSparkles,
-  HiOutlineSquares2X2,
-  HiOutlinePhone,
+  HiOutlineCodeBracket,
+  HiOutlineBriefcase,
+  HiOutlineEnvelope,
 } from "react-icons/hi2";
+import MikasaWidget from "./MikasaWidget";
 
 const NAV_LINKS = [
   { href: "#about", label: "About", Icon: HiOutlineUser },
-  { href: "#skills", label: "Skills", Icon: HiOutlineSparkles },
-  { href: "#projects", label: "Projects", Icon: HiOutlineSquares2X2 },
-  { href: "#contact", label: "Contact", Icon: HiOutlinePhone },
+  { href: "#skills", label: "Skills", Icon: HiOutlineCodeBracket },
+  { href: "#projects", label: "Projects", Icon: HiOutlineBriefcase },
+  { href: "#contact", label: "Contact", Icon: HiOutlineEnvelope },
 ];
 
 const SECTION_IDS = ["hero", "about", "skills", "projects", "contact"];
@@ -69,7 +69,7 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={`
-          fixed top-4 left-1/2 -translate-x-1/2 z-50 px-8 box-border
+          fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 sm:px-6 md:px-8 box-border
           flex items-center justify-between
           bg-white/80 backdrop-blur-md
           rounded-full border-2 border-[#111]
@@ -79,31 +79,40 @@ export default function Navbar() {
         `}
       >
         {/* Logo */}
-        <Link href="/" style={{ paddingLeft: '24px' }} className="flex items-center gap-2 shrink-0" aria-label="Home">
-          <span className="font-black text-base tracking-tight leading-none">
+        <Link
+          href="/"
+          className="flex items-center gap-1.5 sm:gap-2 shrink-0 pl-1 sm:pl-3"
+          aria-label="Home"
+        >
+          <span className="font-black text-base sm:text-lg tracking-tight leading-none text-[#111]">
             Diaz<span className="text-[#1A73E8]">.</span>
           </span>
         </Link>
 
-        {/* Center links — hidden < md */}
-        <ul className="hidden md:flex items-center gap-1" role="list">
-          {NAV_LINKS.map(({ href, label }) => {
+        {/* Center links: Icons on mobile (< md), text on desktop (md+) */}
+        <ul className="flex items-center gap-1 sm:gap-1.5 md:gap-1" role="list">
+          {NAV_LINKS.map(({ href, label, Icon }) => {
             const isActive = active === href;
             return (
               <li key={href}>
                 <a
                   href={href}
                   onClick={(e) => handleNav(e, href)}
+                  aria-label={label}
+                  title={label}
                   aria-current={isActive ? "page" : undefined}
                   className={`
-                    text-sm font-semibold px-4 py-2 rounded-full
-                    transition-all duration-150 select-none
-                    ${isActive
-                      ? "bg-[#111] text-white"
-                      : "text-[#111] hover:bg-[#111]/5"}
+                    flex items-center justify-center rounded-full transition-all duration-150 select-none
+                    w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto md:px-4 md:py-2
+                    ${
+                      isActive
+                        ? "bg-[#111] text-white shadow-[2px_2px_0_#111]"
+                        : "text-[#111] hover:bg-[#111]/5"
+                    }
                   `}
                 >
-                  {label}
+                  <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:hidden stroke-[2]" aria-hidden="true" />
+                  <span className="hidden md:inline text-sm font-semibold leading-none">{label}</span>
                 </a>
               </li>
             );
@@ -112,52 +121,19 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 shrink-0">
-          {/* Hire Me */}
+          {/* Hire Me — hidden on mobile so nav icons have comfortable space */}
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
-            className="flex items-center gap-1.5 h-10 px-5 rounded-full border-2 border-[#111] bg-[#FFD600] font-bold text-sm transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] bg-[#FFD600] font-bold text-xs md:text-sm text-[#111] transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
-            <HiEnvelope className="w-4 h-4 md:hidden" aria-hidden="true" />
-            <span className="hidden md:inline">Hire Me</span>
-            <span className="md:hidden sr-only">Hire Me</span>
+            <span>Hire Me</span>
           </a>
         </div>
-      </nav>
 
-      {/* ── BOTTOM TAB BAR — mobile only (< md) ── */}
-      <div
-        aria-label="Mobile navigation"
-        className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50
-          w-[min(92%,420px)] h-14 px-3
-          flex items-center justify-around
-          bg-white/90 backdrop-blur-md
-          rounded-full border-2 border-[#111]
-          shadow-[4px_4px_0_#111]"
-      >
-        {NAV_LINKS.map(({ href, label, Icon }) => {
-          const isActive = active === href;
-          return (
-            <a
-              key={href}
-              href={href}
-              onClick={(e) => handleNav(e, href)}
-              aria-label={label}
-              aria-current={isActive ? "page" : undefined}
-              className={`
-                flex flex-col items-center justify-center gap-0.5
-                px-3 py-1.5 rounded-full text-[10px] font-bold
-                min-w-[44px] min-h-[44px]
-                transition-all duration-150
-                ${isActive ? "bg-[#FFD600] border-2 border-[#111]" : "text-[#111]"}
-              `}
-            >
-              <Icon className="w-5 h-5" aria-hidden="true" />
-              <span>{label}</span>
-            </a>
-          );
-        })}
-      </div>
+        {/* Mikasa Widget: anchored directly below the right of the navbar */}
+        <MikasaWidget />
+      </nav>
     </>
   );
 }

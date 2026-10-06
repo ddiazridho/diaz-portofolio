@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const ROLES = ["AI Engineer", "Full-Stack Developer"];
+const ROLES = ["AI Engineer", "Sotfware Engineer"];
 
 export default function RotatingText() {
   const [idx, setIdx] = useState(0);

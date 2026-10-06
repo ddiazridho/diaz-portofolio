@@ -1,49 +1,28 @@
 "use client";
 
-import { HiArrowRight, HiEnvelope } from "react-icons/hi2";
+import { HiArrowTopRightOnSquare, HiEnvelope } from "react-icons/hi2";
 import HeroPhoto from "./HeroPhoto";
 import RotatingText from "./RotatingText";
-import StatsStrip from "./StatsStrip";
 
 /** Inline SVG squiggle underline — hand-drawn yellow wave */
 function SquiggleUnderline() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 260 18"
+      viewBox="0 0 380 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-[260px] mt-1"
+      className="w-full max-w-[340px] sm:max-w-[420px] mt-1.5"
       preserveAspectRatio="none"
     >
       <path
-        d="M4 10 C30 3, 60 17, 90 10 S150 3, 180 10 S230 17, 256 10"
+        d="M4 10 C45 3, 90 17, 135 10 S225 3, 270 10 S335 17, 376 10"
         stroke="#FFD600"
         strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
-  );
-}
-
-/** Eyebrow role chip */
-function RoleChip({
-  label,
-  tintBg,
-  tintText,
-}: {
-  label: string;
-  tintBg: string;
-  tintText: string;
-}) {
-  return (
-    <span
-      className="rounded-full border-2 border-[#111] px-3 py-1 text-xs font-bold uppercase tracking-wide"
-      style={{ background: tintBg, color: tintText }}
-    >
-      {label}
-    </span>
   );
 }
 
@@ -54,25 +33,13 @@ export default function HeroSection() {
       className="relative w-full min-h-screen flex items-center overflow-hidden"
       style={{ paddingBottom: "1px" /* clear mobile bottom tab */ }}
     >
-      {/* ── Background blobs ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-1/4 w-[480px] h-[480px] rounded-full blur-3xl -z-10"
-        style={{ background: "rgba(26,115,232,0.08)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 bottom-16 w-[320px] h-[320px] rounded-full blur-3xl -z-10"
-        style={{ background: "rgba(255,214,0,0.12)" }}
-      />
-
       {/* ── Main container ── */}
       <div className="section" style={{ paddingTop: "88px", paddingBottom: "32px" }}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10">
 
           {/* ══ PHOTO COLUMN — LEFT ══ */}
           <div
-            className="lg:col-span-5 flex justify-center lg:justify-start
+            className="lg:-mt-30 lg:col-span-5 flex justify-center lg:justify-start
               motion-safe:animate-[slideInLeft_500ms_cubic-bezier(0.16,1,0.3,1)_both]"
           >
             <HeroPhoto src="/DIAZ PHOTO.png" />
@@ -82,89 +49,100 @@ export default function HeroSection() {
           <div
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-0"
           >
-            {/* 1. Eyebrow chips */}
+            {/* 1. Status Eyebrow Badge
+            <div className="mb-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border-[2.5px] border-[#111] bg-white text-[#111] font-bold text-xs uppercase tracking-wider shadow-[3px_3px_0_#111] motion-safe:animate-[fadeUp_500ms_160ms_both]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00C853] border border-[#111] animate-pulse" />
+              <span>Available for Opportunities</span>
+            </div> */}
 
-
-            {/* 2. Greeting */}
-
-
-            {/* 3. Name — two stacked lines */}
+            {/* 2. Name — single line & bold */}
             <div
-              className="mb-2 motion-safe:animate-[fadeUp_500ms_240ms_both]"
+              className="mb-3 motion-safe:animate-[fadeUp_500ms_240ms_both] w-full"
             >
               <h1
-                className="font-extrabold leading-[0.95] tracking-tight"
+                className="font-black tracking-tight"
                 style={{
                   fontFamily: "var(--font-space-grotesk)",
-                  fontSize: "clamp(2.6rem, 6vw, 4rem)",
                 }}
               >
-                <span className="block text-[#111]">I'm</span>
-                <span className="block">
-                  <span style={{ color: "#1A73E8" }}>Diaz Ridho Yuristianto</span>
-                  <span style={{ color: "#FFD600" }}>.</span>
+                <span style={{
+                  WebkitTextStroke: '1px #000000',
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)"
+                }} className="block text-2xl sm:text-3xl lg:text-3xl font-black text-[#111] -mb-1 lg:-mb-1">
+                  I'm
+                </span>
+                <span
+                  className="block text-[#1A73E8] font-black leading-tight tracking-tight sm:whitespace-nowrap"
+                  style={{
+                    fontSize: "clamp(2rem, 5.2vw, 3.8rem)",
+                    fontWeight: 900,
+                    WebkitTextStroke: "1px #1A73E8"
+                  }}
+                >
+                  Diaz R. Yuristianto
                 </span>
               </h1>
-              {/* Squiggle under "Ridho" */}
+              {/* Squiggle under name */}
               <div className="flex justify-center lg:justify-start">
                 <SquiggleUnderline />
               </div>
             </div>
 
-            {/* 4. Rotating role */}
-            <div className="mb-3 motion-safe:animate-[fadeUp_500ms_320ms_both]">
+            {/* 3. Rotating role (Focus card removed) */}
+            <div className="mb-3.5 flex items-center justify-center lg:justify-start motion-safe:animate-[fadeUp_500ms_320ms_both]">
               <RotatingText />
             </div>
 
-            {/* 5. Tagline */}
-            <p
-              className="italic text-neutral-700 text-sm max-w-xl mb-4 border-l-4 border-[#1A73E8] pl-4 text-left
-                motion-safe:animate-[fadeUp_500ms_400ms_both]"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              "Membangun produk digital yang cepat, intuitif, dan berdampak nyata."
-            </p>
-
-            {/* 6. CTA row */}
+            {/* 4. Tagline — Neubrutalist Card */}
             <div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-4
+              className="w-full max-w-xl mb-6 p-3.5 sm:p-4 rounded-2xl border-[2.5px] border-[#111] bg-white shadow-[4px_4px_0_#111] text-left motion-safe:animate-[fadeUp_500ms_400ms_both]"
+            >
+              <p
+                className="text-neutral-800 text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#1A73E8] pl-3 italic"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >
+                "Computer Engineering student specializing in AI and Software Engineering. Passionate about designing, fine-tuning, and deploying scalable machine learning models into production-ready software."
+              </p>
+            </div>
+
+            {/* 5. CTA row */}
+            <div
+              className="flex flex-wrap justify-center lg:justify-start gap-3.5 mb-2
                 motion-safe:animate-[fadeUp_500ms_480ms_both]"
             >
-              {/* Primary */}
+              {/* Primary - Look CV */}
               <a
-                href="#projects"
-                id="cta-lihat-karya"
-                className="flex items-center gap-2 h-10 px-5 rounded-full
-                  bg-[#FFD600] border-2 border-[#111] font-bold text-sm
+                href="/Diaz%20Ridho%20Yuristianto_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="cta-cv"
+                className="flex items-center gap-2 h-11 px-6 rounded-full
+                  bg-[#FFD600] border-[2.5px] border-[#111] font-black text-sm text-[#111]
                   shadow-[4px_4px_0_#111]
                   transition-all duration-150
-                  hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#111]
+                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
-                <HiArrowRight className="w-4 h-4" aria-hidden="true" />
-                Lihat Karya
+                <HiArrowTopRightOnSquare className="w-4 h-4 stroke-[1]" aria-hidden="true" />
+                Look CV
               </a>
 
-              {/* Secondary */}
+              {/* Secondary - Kontak */}
               <a
                 href="#contact"
                 id="cta-kontak"
-                className="flex items-center gap-2 h-10 px-5 rounded-full
-                  bg-white border-2 border-[#111] font-bold text-sm
+                className="flex items-center gap-2 h-11 px-6 rounded-full
+                  bg-white border-[2.5px] border-[#111] font-black text-sm text-[#111]
                   shadow-[4px_4px_0_#111]
                   transition-all duration-150
-                  hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#111]
+                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <HiEnvelope className="w-4 h-4" aria-hidden="true" />
-                Kontak
+                Contact
               </a>
             </div>
 
-            {/* 7. Stats strip */}
-            <div className="flex justify-center lg:justify-start w-full motion-safe:animate-[fadeUp_500ms_560ms_both]">
-              <StatsStrip />
-            </div>
           </div>
         </div>
       </div>

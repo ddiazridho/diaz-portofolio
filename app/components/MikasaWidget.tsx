@@ -100,13 +100,9 @@ export default function MikasaWidget({
         }
       `}</style>
 
-      {/*
-        Anchor: fixed, right-aligned, flush under the navbar pill.
-        Navbar pill: top-4 (16px) + h-14 (56px) = 72px bottom edge.
-      */}
+      {/* Anchor: positioned directly at the bottom right of the navbar */}
       <div
-        className="fixed right-83 z-40 flex flex-col items-center"
-        style={{ top: "72px" }}
+        className="absolute right-6 sm:right-8 top-full z-40 flex flex-col items-center"
         aria-label="Mikasa widget"
       >
 
@@ -116,23 +112,19 @@ export default function MikasaWidget({
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Hide Mikasa widget" : "Show Mikasa widget"}
-          className={`mikasa-chevron flex items-center justify-center w-8 h-5 rounded-b-full
-            bg-white border-2 border-t-0 border-[#111]
-            shadow-[0_4px_10px_rgba(0,0,0,0.15)]
-            transition-transform duration-200 hover:scale-110
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A73E8]`}
-          style={{ marginTop: open ? "-2px" : "0" }}
+          className="mt-1 flex items-center justify-center p-1 transition-transform duration-200 hover:scale-110 focus-visible:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 10"
-            width="12"
-            height="8"
+            width="16"
+            height="10"
             fill="none"
-            stroke="#111"
+            stroke="currentColor"
             strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="text-neutral-800 dark:text-neutral-200"
             style={{
               transition: "transform 0.3s ease",
               transform: open ? "rotate(180deg)" : "rotate(0deg)",
@@ -150,7 +142,7 @@ export default function MikasaWidget({
           <div
             style={{
               width: "2px",
-              height: "28px",
+              height: "15px",
               background: "#333",
               flexShrink: 0,
             }}

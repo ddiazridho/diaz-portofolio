@@ -17,14 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Diaz Ridho — Full-Stack Developer & UI Designer",
+  title: "Diaz R. Yuristianto",
   description:
-    "Portfolio of Diaz Ridho — Full-Stack Developer and UI Designer building fast, intuitive, and impactful digital products.",
-  keywords: ["full-stack developer", "UI designer", "React", "Next.js", "portfolio"],
+    "Portfolio of Diaz R. Yuristianto",
+  keywords: ["Software Engineer", "AI Engineer", "React", "Next.js", "portfolio"],
   authors: [{ name: "Diaz Ridho" }],
   openGraph: {
-    title: "Diaz Ridho — Full-Stack Developer & UI Designer",
-    description: "Building fast, intuitive, and impactful digital products.",
+    title: "Diaz R. Yuristianto",
+    description: "Portfolio of Diaz R. Yuristianto",
     type: "website",
   },
 };
@@ -43,8 +43,8 @@ export default function RootLayout({
         {children}
         <FlyingMascot />
         <WalkingMascot
-          src="/ATTACK TITAN PIXEL.png"
-          width={180}
+          src="/Red Larva.png"
+          width={10}
           duration={32}
           facingRight={true}
         />

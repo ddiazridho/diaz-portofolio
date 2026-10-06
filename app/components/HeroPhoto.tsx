@@ -1,102 +1,114 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { BrainCircuit, Code2 } from "lucide-react";
 
-/** Pill sticker with floating animation */
-function Sticker({
+/** Floating pill sticker matching reference attachment */
+function FloatingBadge({
   label,
-  emoji,
-  bg = "white",
-  textColor = "#111",
+  icon,
   rotate = 0,
   delay = 0,
+  duration = 3.2,
+  shadowColor = "#1A73E8",
   className = "",
 }: {
   label: string;
-  emoji?: string;
-  bg?: string;
-  textColor?: string;
+  icon?: React.ReactNode;
   rotate?: number;
   delay?: number;
+  duration?: number;
+  shadowColor?: string;
   className?: string;
 }) {
   return (
-    <span
+    <motion.div
+      animate={{
+        y: [0, -8, 0],
+        rotate: [rotate, rotate + 1.5, rotate],
+      }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay,
+      }}
       className={`
-        absolute z-10
-        flex items-center gap-1.5 px-3 py-1.5
-        rounded-full border-2 border-[#111]
-        text-xs font-bold select-none whitespace-nowrap
-        motion-safe:animate-float
+        absolute z-20
+        flex items-center gap-1.5 px-2.5 py-1
+        rounded-full border-[2px] border-[#111]
+        bg-white text-[#111] text-[11px] sm:text-xs font-black select-none whitespace-nowrap
         ${className}
       `}
       style={{
-        background: bg,
-        color: textColor,
-        rotate: `${rotate}deg`,
-        animationDelay: `${delay}s`,
-        boxShadow: "2px 2px 0 #111",
+        boxShadow: `3px 3px 0px ${shadowColor}`,
       }}
     >
-      {emoji && <span aria-hidden="true">{emoji}</span>}
-      {label}
-    </span>
+      {icon}
+      <span>{label}</span>
+    </motion.div>
   );
 }
 
 export default function HeroPhoto({ src }: { src: string }) {
   return (
-    /* outer wrapper — positions stickers relative to the frame */
-    <div className="relative flex justify-center lg:justify-start mx-auto lg:mx-0 max-w-[220px] md:max-w-[240px] lg:max-w-[260px] w-full">
+    /* outer wrapper with group for hover states */
+    <div className="relative group flex justify-center lg:justify-start items-end mx-auto lg:mx-0 w-full max-w-[300px] sm:max-w-[320px] h-[390px] sm:h-[415px] select-none">
 
-      {/* ── Offset yellow block (behind) ── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 translate-x-4 translate-y-4 -z-10
-          rounded-t-[999px] rounded-b-3xl
-          bg-[#FFD600] border-[3px] border-[#111]"
-      />
+      {/* ── CARD PLACEHOLDERS (Slightly enlarged, still compact backdrop behind Diaz) ── */}
+      <div className="absolute left-1/2 -translate-x-1/2 w-[225px] sm:w-[245px] h-[268px] sm:h-[285px] bottom-2 -z-10">
+        {/* Back placeholder: Orange arch (tilted counter-clockwise) */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -rotate-[9deg] -translate-x-2.5 translate-y-2
+            rounded-t-[999px] rounded-b-[28px]
+            bg-[#FF6B00] border-[3.5px] border-[#111]
+            shadow-[8px_8px_0px_0px_#111]"
+        />
 
-      {/* ── Arch frame ── */}
-      <div
-        className="relative w-full aspect-[4/5]
-          rounded-t-[999px] rounded-b-3xl
-          border-[3px] border-[#111]
-          overflow-hidden bg-[#1A73E8]"
-      >
-        <Image
-          src={src}
-          alt="Diaz Ridho — Full-Stack Developer & UI Designer"
-          fill
-          className="object-cover object-top"
-          priority
-          sizes="(max-width: 768px) 280px, (max-width: 1024px) 340px, 380px"
+        {/* Front placeholder: Blue arch (slightly tilted clockwise) */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 rotate-[2deg]
+            rounded-t-[999px] rounded-b-[28px]
+            bg-[#1A73E8] border-[3.5px] border-[#111]
+            shadow-[8px_8px_0px_0px_#111]"
         />
       </div>
 
-      {/* ── Stickers ── */}
-      {/* Open to Work — top-right, overlapping arch edge */}
+      {/* ── DIAZ PHOTO IN FRONT (Larger than cards, head & shoulders popping out) ── */}
+      <div className="relative z-10 w-full h-full overflow-hidden pointer-events-auto">
+        <Image
+          src={src}
+          alt="Diaz Ridho - AI Engineer"
+          fill
+          className="object-cover object-top scale-[1.06] transition-transform duration-300 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+          priority
+          sizes="(max-width: 768px) 320px, (max-width: 1024px) 360px, 400px"
+        />
+      </div>
 
-
-      {/* Coffee-Lover — bottom-left */}
-      <Sticker
-        label="Software"
-        emoji="☕"
-        bg="#FFD600"
+      {/* ── Badges ── */}
+      {/* AI Engineer Badge — right side, compact, brain/AI icon */}
+      <FloatingBadge
+        label="AI Engineer"
+        icon={<BrainCircuit className="w-3.5 h-3.5 text-[#1A73E8] stroke-[2.5]" />}
         rotate={5}
-        delay={0.6}
-        className="bottom-10 -left-6"
+        delay={0}
+        shadowColor="#1A73E8"
+        className="-right-2 sm:-right-5 top-[39%]"
       />
 
-      {/* Fullstack Dev — mid-right */}
-      <Sticker
-        label="AI Engineer"
-        emoji="⚡"
-        bg="#1A73E8"
-        textColor="white"
-        rotate={3}
-        delay={1.2}
-        className="top-1/2 -translate-y-1/2 -right-8"
+      {/* Software Badge — bottom-left, compact, code icon */}
+      <FloatingBadge
+        label="Software"
+        icon={<Code2 className="w-3.5 h-3.5 text-[#FF6B00] stroke-[2.5]" />}
+        rotate={-5}
+        delay={1.5}
+        shadowColor="#1A73E8"
+        className="-left-2 sm:-left-4 bottom-8"
       />
     </div>
   );

@@ -154,7 +154,7 @@ export default function SkillsSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            TECHNOLOGY <br />
+            TECHNOLOGY I USE <br />
 
           </motion.h2>
 
@@ -167,7 +167,7 @@ export default function SkillsSection() {
             viewport={{ once: true }}
             className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
-            A curated showcase of real-world AI systems, full-lifecycle applications, and automated tools I have built.
+            The core tech stack, frameworks, and modern tools I leverage to build scalable and intelligent software.
           </motion.p>
         </div>
 
