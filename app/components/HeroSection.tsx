@@ -9,16 +9,34 @@ function SquiggleUnderline() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 380 18"
+      viewBox="0 0 380 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-[340px] sm:max-w-[420px] mt-1.5"
+      className="w-full max-w-[340px] sm:max-w-[420px] mt-1.5 overflow-visible"
       preserveAspectRatio="none"
     >
+      {/* Neubrutalist hard offset shadow */}
       <path
-        d="M4 10 C45 3, 90 17, 135 10 S225 3, 270 10 S335 17, 376 10"
-        stroke="#FFD600"
+        d="M4 10 L 35 3 L 66 15 L 97 3 L 128 15 L 159 3 L 190 15 L 221 3 L 252 15 L 283 3 L 314 15 L 345 3 L 376 9"
+        stroke="#111111"
         strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        transform="translate(2.5, 2.5)"
+      />
+      {/* Neubrutalist black outline */}
+      <path
+        d="M4 10 L 35 3 L 66 15 L 97 3 L 128 15 L 159 3 L 190 15 L 221 3 L 252 15 L 283 3 L 314 15 L 345 3 L 376 9"
+        stroke="#111111"
+        strokeWidth="6.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* Neubrutalist yellow accent core */}
+      <path
+        d="M4 10 L 35 3 L 66 15 L 97 3 L 128 15 L 159 3 L 190 15 L 221 3 L 252 15 L 283 3 L 314 15 L 345 3 L 376 9"
+        stroke="#FFD000"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -98,7 +116,7 @@ export default function HeroSection() {
               className="w-full max-w-xl mb-6 p-3.5 sm:p-4 rounded-2xl border-[2.5px] border-[#111] bg-white shadow-[4px_4px_0_#111] text-left motion-safe:animate-[fadeUp_500ms_400ms_both]"
             >
               <p
-                className="text-neutral-800 text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#1A73E8] pl-3 italic"
+                className="text-[#4B5563] text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#1D4ED8] pl-3 italic"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 "Computer Engineering student specializing in AI and Software Engineering. Passionate about designing, fine-tuning, and deploying scalable machine learning models into production-ready software."
@@ -117,7 +135,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 id="cta-cv"
                 className="flex items-center gap-2 h-11 px-6 rounded-full
-                  bg-[#FFD600] border-[2.5px] border-[#111] font-black text-sm text-[#111]
+                  bg-[#FFD000] border-[2.5px] border-[#111] font-black text-sm text-[#111]
                   shadow-[4px_4px_0_#111]
                   transition-all duration-150
                   hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]

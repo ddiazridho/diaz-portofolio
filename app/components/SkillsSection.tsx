@@ -128,7 +128,6 @@ export default function SkillsSection() {
     <section
       id="skills"
       className="w-full scroll-mt-24 relative overflow-hidden"
-      style={{ borderTop: "1.5px solid var(--color-border)" }}
     >
 
       <div className="section">
@@ -143,7 +142,7 @@ export default function SkillsSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0D9488] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
               DEV STACK <span className="opacity-40 font-normal">|</span> (02)
             </span>
           </motion.div>
@@ -169,7 +168,7 @@ export default function SkillsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#4B5563] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             The core tech stack, frameworks, and modern tools I leverage to build scalable and intelligent software.
           </motion.p>

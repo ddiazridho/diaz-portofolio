@@ -8,16 +8,17 @@
   --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
   --color-text: #111111;
-  --color-text-muted: #666666;
+  --color-text-muted: #4B5563;
   --color-border: #E0E0E0;
 
-  --color-blue: #1877F2;
+  --color-blue: #1D4ED8;
   --color-blue-dark: #0D5DBF;
-  --color-yellow: #FFD600;
+  --color-yellow: #FFD000;
   --color-yellow-dark: #E6BF00;
+  --color-teal: #0D9488;
   --color-red: #FF3B30;
   --color-green: #00C853;
-  --color-orange: #FF6B35;
+  --color-orange: #FF5A36;
 
   /* Typography — resolved from next/font variables injected in layout.tsx */
   --font-hero: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
@@ -58,7 +59,7 @@ html {
 
 body {
   background-color: var(--color-bg);
-  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px;
   background-repeat: repeat;
   color: var(--color-text);

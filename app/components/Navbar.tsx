@@ -125,7 +125,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] bg-[#FFD600] font-bold text-xs md:text-sm text-[#111] transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] bg-[#FFD000] font-bold text-xs md:text-sm text-[#111] transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
             <span>Hire Me</span>
           </a>

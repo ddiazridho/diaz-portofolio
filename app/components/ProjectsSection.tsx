@@ -66,7 +66,6 @@ export default function ProjectsSection() {
     <section
       id="projects"
       className="w-full scroll-mt-24 relative overflow-hidden"
-      style={{ borderTop: "1.5px solid var(--color-border)" }}
     >
       <div className="section">
         {/* Header */}
@@ -79,7 +78,7 @@ export default function ProjectsSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0D9488] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
               Projects <span className="opacity-40 font-normal">|</span> (03)
             </span>
           </motion.div>
@@ -105,7 +104,7 @@ export default function ProjectsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-neutral-600 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#4B5563] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             A selection of end-to-end applications, experiments, and production-ready systems I've built.
           </motion.p>
@@ -143,7 +142,7 @@ export default function ProjectsSection() {
               </h3>
 
               {/* Deskripsi Project */}
-              <p className="text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed mb-5">
+              <p className="text-xs sm:text-sm text-[#4B5563] font-medium leading-relaxed mb-5">
                 {project.description}
               </p>
 
@@ -169,7 +168,7 @@ export default function ProjectsSection() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border-[2.5px] border-[#111] bg-yellow-400 hover:bg-yellow-300 text-[#111] font-black text-xs sm:text-sm uppercase tracking-wider shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none"
+                className="mt-auto w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border-[2.5px] border-[#111] bg-[#FFD000] hover:bg-[#FFE04D] text-[#111] font-black text-xs sm:text-sm uppercase tracking-wider shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 <SiGithub className="w-4 h-4 text-[#111]" />
