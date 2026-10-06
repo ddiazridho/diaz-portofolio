@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 /**
@@ -8,12 +9,11 @@ import Image from "next/image";
  * Pixel-art sprite that walks steadily left → right, pinned flush
  * to the very bottom of the viewport. Loops infinitely.
  *
- * Props
- * ─────
- * src         – public image path
- * width       – sprite width in px (default 180)
- * duration    – seconds per full crossing (default 32 = slow & steady)
- * facingRight – false → flip sprite horizontally with scaleX(-1)
+ * Micro-interaction on click:
+ * 1. Recoil/tickle phase: steps backward while wiggling/jiggling.
+ * 2. Short dash phase: sudden quick forward sprint.
+ * 3. Reset: smoothly restores to original position, ready to be clicked again.
+ * Strictly preserves orientation (no rotate or flip).
  */
 interface WalkingMascotProps {
   src?: string;
@@ -28,15 +28,45 @@ export default function WalkingMascot({
   duration = 32,
   facingRight = true,
 }: WalkingMascotProps) {
+  const [isReacting, setIsReacting] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+
   const flipX = facingRight ? 1 : -1;
+
+  const handleLarvaClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsReacting(true);
+    setAnimKey((prev) => prev + 1);
+  };
 
   return (
     <>
       <style>{`
         /* ─── Horizontal traverse: off-left → off-right, loops instantly ─── */
         @keyframes wm-traverse {
-          from { transform: translateX(-${width + 40}px); }
-          to   { transform: translateX(calc(100vw + ${width + 40}px)); }
+          0% {
+            transform: translateX(-${width + 40}px);
+            opacity: 1;
+          }
+          70% {
+            /* Tiba di luar layar sebelah kanan pada 70% total durasi */
+            transform: translateX(calc(100vw + ${width + 40}px));
+            opacity: 1;
+          }
+          70.1% {
+            /* Langsung sembunyikan supaya tidak terlihat balik */
+            opacity: 0;
+          }
+          99.9% {
+            /* Diam tak terlihat di luar layar sisi kiri */
+            transform: translateX(-${width + 40}px);
+            opacity: 0;
+          }
+          100% {
+            /* Siap jalan lagi */
+            transform: translateX(-${width + 40}px);
+            opacity: 1;
+          }
         }
 
         /* ─── Walk-cycle: step-bob + slight tilt on each footfall ─── */
@@ -53,9 +83,67 @@ export default function WalkingMascot({
         }
 
         /*
+         * Sequential click animation for Larva:
+         * 1. Recoil / tickle phase: stepping backward a few pixels with a brief wiggle/jiggle
+         * 2. Short dash phase: quick, sudden forward sprint for a short distance
+         * 3. Reset phase: smoothly restore the sprite to its original position
+         * STRICT: Keep exact same orientation (no rotation, no flipping).
+         */
+        @keyframes wm-larva-interaction {
+          /* 1. Recoil/tickle phase: stepping backward with wiggle/jiggle */
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          6% {
+            transform: translate3d(-4px, -2px, 0);
+          }
+          12% {
+            transform: translate3d(-8px, 3px, 0);
+          }
+          18% {
+            transform: translate3d(-14px, -3px, 0);
+          }
+          24% {
+            transform: translate3d(-10px, 2px, 0);
+          }
+          30% {
+            transform: translate3d(-16px, -2px, 0);
+          }
+          36% {
+            transform: translate3d(-12px, 1px, 0);
+          }
+          42% {
+            transform: translate3d(-15px, 0, 0);
+          }
+
+          /* 2. Short dash phase: sudden quick forward sprint */
+          48% {
+            transform: translate3d(10px, 0, 0);
+          }
+          56% {
+            transform: translate3d(48px, -2px, 0);
+          }
+          64% {
+            transform: translate3d(58px, 0, 0);
+          }
+          72% {
+            transform: translate3d(54px, 0, 0);
+          }
+
+          /* 3. Reset phase: smoothly restore sprite to original position */
+          84% {
+            transform: translate3d(24px, 0, 0);
+          }
+          94% {
+            transform: translate3d(6px, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+
+        /*
          * Outer: pinned to bottom-left, drives the horizontal traverse.
-         * position: fixed + bottom: 0 + line-height: 0 ensures the element's
-         * own bottom edge is exactly the viewport bottom — no gap at all.
          */
         .wm-outer {
           position: fixed;
@@ -63,19 +151,35 @@ export default function WalkingMascot({
           left: 0;
           z-index: 50;
           pointer-events: none;
-          /* Remove any baseline / line-height gap beneath the image */
           line-height: 0;
           font-size: 0;
-          /* Steady, linear walk */
           animation: wm-traverse ${duration}s linear infinite;
           will-change: transform;
           overflow: visible;
         }
 
+        /* Clickable hit-box */
+        .wm-clickable {
+          pointer-events: auto;
+          cursor: pointer;
+          display: inline-block;
+          line-height: 0;
+          outline: none;
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
+          padding: 8px;
+          margin: -8px;
+        }
+
+        /* Middle container: executes click reaction */
+        .wm-reacting {
+          animation: wm-larva-interaction 1.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          will-change: transform;
+        }
+
         /*
          * Inner: handles the walk-cycle bob.
-         * display: flex + align-items: flex-end keeps the sprite's
-         * feet touching the floor at all times.
+         * During reaction, walk cycle rotation is paused to preserve strict orientation.
          */
         .wm-inner {
           display: flex;
@@ -85,12 +189,16 @@ export default function WalkingMascot({
           will-change: transform;
         }
 
+        .wm-inner-reacting {
+          animation: none;
+          transform: scaleX(${flipX});
+        }
+
         /* Pixel-crisp image — no blur, no optimiser softening */
         .wm-img {
           display: block;
           width: 35px;
           height: auto;
-          /* Keep sprite glued to the very bottom */
           vertical-align: bottom;
           image-rendering: pixelated;
           image-rendering: crisp-edges;
@@ -99,18 +207,40 @@ export default function WalkingMascot({
       `}</style>
 
       {/* Outer: horizontal traverse */}
-      <div className="wm-outer" aria-hidden="true">
-        {/* Inner: walk-cycle bob */}
-        <div className="wm-inner">
-          <Image
-            src={src}
-            alt="Walking mascot"
-            width={width}
-            height={width}
-            className="wm-img"
-            priority={false}
-            unoptimized /* preserve pixel art — skip Next.js blur/optimiser */
-          />
+      <div className="wm-outer" aria-hidden="false">
+        {/* Clickable target */}
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="Red Larva mascot"
+          onClick={handleLarvaClick}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleLarvaClick(e as unknown as React.MouseEvent);
+            }
+          }}
+          className="wm-clickable"
+        >
+          {/* Reaction container (recoil -> dash -> restore) */}
+          <div
+            key={animKey}
+            className={isReacting ? "wm-reacting" : ""}
+            onAnimationEnd={() => setIsReacting(false)}
+          >
+            {/* Inner: walk-cycle bob */}
+            <div className={`wm-inner ${isReacting ? "wm-inner-reacting" : ""}`}>
+              <Image
+                src={src}
+                alt="Walking mascot"
+                width={width}
+                height={width}
+                className="wm-img"
+                priority={false}
+                unoptimized
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>
