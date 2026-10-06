@@ -57,23 +57,23 @@ export default function HeroPhoto({ src }: { src: string }) {
     /* outer wrapper with group for hover states */
     <div className="relative group flex justify-center lg:justify-start items-end mx-auto lg:mx-0 w-full max-w-[300px] sm:max-w-[320px] h-[390px] sm:h-[415px] select-none">
 
-      {/* ── CARD PLACEHOLDERS (Slightly enlarged, still compact backdrop behind Diaz) ── */}
+      {/* ── CARD PLACEHOLDERS (Spider-Man aesthetic dual arches behind Diaz) ── */}
       <div className="absolute left-1/2 -translate-x-1/2 w-[225px] sm:w-[245px] h-[268px] sm:h-[285px] bottom-2 -z-10">
-        {/* Back placeholder: Orange arch (tilted counter-clockwise) */}
+        {/* Back placeholder: Spidey Crimson Red arch (tilted counter-clockwise) */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -rotate-[9deg] -translate-x-2.5 translate-y-2
             rounded-t-[999px] rounded-b-[28px]
-            bg-[#FF6B00] border-[3.5px] border-[#111]
+            bg-[#E23636] border-[3.5px] border-[#111]
             shadow-[8px_8px_0px_0px_#111]"
         />
 
-        {/* Front placeholder: Blue arch (slightly tilted clockwise) */}
+        {/* Front placeholder: Heroic Cobalt Blue arch (slightly tilted clockwise) */}
         <div
           aria-hidden="true"
           className="absolute inset-0 rotate-[2deg]
             rounded-t-[999px] rounded-b-[28px]
-            bg-[#1A73E8] border-[3.5px] border-[#111]
+            bg-[#0047AB] border-[3.5px] border-[#111]
             shadow-[8px_8px_0px_0px_#111]"
         />
       </div>
@@ -94,20 +94,20 @@ export default function HeroPhoto({ src }: { src: string }) {
       {/* AI Engineer Badge — right side, compact, brain/AI icon */}
       <FloatingBadge
         label="AI Engineer"
-        icon={<BrainCircuit className="w-3.5 h-3.5 text-[#1A73E8] stroke-[2.5]" />}
+        icon={<BrainCircuit className="w-3.5 h-3.5 text-[#0047AB] stroke-[2.5]" />}
         rotate={5}
         delay={0}
-        shadowColor="#1A73E8"
+        shadowColor="#111111"
         className="-right-2 sm:-right-5 top-[39%]"
       />
 
       {/* Software Badge — bottom-left, compact, code icon */}
       <FloatingBadge
         label="Software"
-        icon={<Code2 className="w-3.5 h-3.5 text-[#FF6B00] stroke-[2.5]" />}
+        icon={<Code2 className="w-3.5 h-3.5 text-[#E23636] stroke-[2.5]" />}
         rotate={-5}
         delay={1.5}
-        shadowColor="#1A73E8"
+        shadowColor="#111111"
         className="-left-2 sm:-left-4 bottom-8"
       />
     </div>

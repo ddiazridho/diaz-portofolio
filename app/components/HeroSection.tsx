@@ -32,10 +32,10 @@ function SquiggleUnderline() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* Neubrutalist yellow accent core */}
+      {/* Neubrutalist red accent core */}
       <path
         d="M4 10 L 35 3 L 66 15 L 97 3 L 128 15 L 159 3 L 190 15 L 221 3 L 252 15 L 283 3 L 314 15 L 345 3 L 376 9"
-        stroke="#FFD000"
+        stroke="#E23636"
         strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -90,11 +90,11 @@ export default function HeroSection() {
                   I'm
                 </span>
                 <span
-                  className="block text-[#1A73E8] font-black leading-tight tracking-tight sm:whitespace-nowrap"
+                  className="block text-[#0047AB] font-black leading-tight tracking-tight sm:whitespace-nowrap"
                   style={{
                     fontSize: "clamp(2rem, 5.2vw, 3.8rem)",
                     fontWeight: 900,
-                    WebkitTextStroke: "1px #1A73E8"
+                    WebkitTextStroke: "1px #0047AB"
                   }}
                 >
                   Diaz R. Yuristianto
@@ -116,7 +116,7 @@ export default function HeroSection() {
               className="w-full max-w-xl mb-6 p-3.5 sm:p-4 rounded-2xl border-[2.5px] border-[#111] bg-white shadow-[4px_4px_0_#111] text-left motion-safe:animate-[fadeUp_500ms_400ms_both]"
             >
               <p
-                className="text-[#4B5563] text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#1D4ED8] pl-3 italic"
+                className="text-[#374151] text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#0047AB] pl-3 italic"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 "Computer Engineering student specializing in AI and Software Engineering. Passionate about designing, fine-tuning, and deploying scalable machine learning models into production-ready software."
@@ -135,7 +135,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 id="cta-cv"
                 className="flex items-center gap-2 h-11 px-6 rounded-full
-                  bg-[#FFD000] border-[2.5px] border-[#111] font-black text-sm text-[#111]
+                  bg-[#E23636] hover:bg-[#DC2626] border-[2.5px] border-[#111] font-black text-sm text-white
                   shadow-[4px_4px_0_#111]
                   transition-all duration-150
                   hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]
@@ -150,7 +150,7 @@ export default function HeroSection() {
                 href="#contact"
                 id="cta-kontak"
                 className="flex items-center gap-2 h-11 px-6 rounded-full
-                  bg-white border-[2.5px] border-[#111] font-black text-sm text-[#111]
+                  bg-white hover:bg-neutral-50 border-[2.5px] border-[#111] font-black text-sm text-[#111]
                   shadow-[4px_4px_0_#111]
                   transition-all duration-150
                   hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]

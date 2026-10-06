@@ -8,17 +8,18 @@
   --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
   --color-text: #111111;
-  --color-text-muted: #4B5563;
-  --color-border: #E0E0E0;
+  --color-text-muted: #374151;
+  --color-border: #111111;
 
-  --color-blue: #1D4ED8;
-  --color-blue-dark: #0D5DBF;
-  --color-yellow: #FFD000;
-  --color-yellow-dark: #E6BF00;
+  /* Spider-Man Palette */
+  --color-blue: #0047AB;
+  --color-blue-dark: #00308F;
+  --color-red: #E23636;
+  --color-red-dark: #DC2626;
+  --color-yellow: #FDB813;
+  --color-yellow-dark: #E09E00;
   --color-teal: #0D9488;
-  --color-red: #FF3B30;
   --color-green: #00C853;
-  --color-orange: #FF5A36;
 
   /* Typography — resolved from next/font variables injected in layout.tsx */
   --font-hero: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
@@ -31,10 +32,10 @@
   --radius-xl: 28px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.14);
-  --shadow-btn: 0 4px 14px rgba(24, 119, 242, 0.35);
+  /* Crisp Neobrutalist Hard Shadows */
+  --shadow-card: 4px 4px 0px #111111;
+  --shadow-card-hover: 8px 8px 0px #111111;
+  --shadow-btn: 3px 3px 0px #111111;
 }
 
 /* ─────────────────────────────────────
@@ -275,8 +276,8 @@ h5 {
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: var(--color-yellow);
-  color: var(--color-text);
+  background: var(--color-red);
+  color: #FFFFFF;
   font-family: var(--font-hero);
   font-size: 0.9rem;
   font-weight: 700;
@@ -291,7 +292,7 @@ h5 {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 4px 4px 0px var(--color-text);
-  background: var(--color-yellow-dark);
+  background: var(--color-red-dark);
 }
 
 .btn-primary:active {

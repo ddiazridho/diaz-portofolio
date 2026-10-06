@@ -142,7 +142,7 @@ export default function SkillsSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0D9488] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0047AB] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
               DEV STACK <span className="opacity-40 font-normal">|</span> (02)
             </span>
           </motion.div>
@@ -168,7 +168,7 @@ export default function SkillsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-[#4B5563] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#374151] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             The core tech stack, frameworks, and modern tools I leverage to build scalable and intelligent software.
           </motion.p>
@@ -193,7 +193,7 @@ export default function SkillsSection() {
           >
             {/* Card Header */}
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-blue-300 border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-[#111]">
+              <div className="w-10 h-10 rounded-xl bg-[#0047AB] border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-white">
                 <Wrench className="w-5 h-5 stroke-[2.5]" />
               </div>
               <h3
@@ -238,7 +238,7 @@ export default function SkillsSection() {
           >
             {/* Card Header */}
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-yellow-300 border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-[#111]">
+              <div className="w-10 h-10 rounded-xl bg-[#E23636] border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-white">
                 <Bot className="w-5 h-5 stroke-[2.5]" />
               </div>
               <h3

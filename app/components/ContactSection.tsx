@@ -94,7 +94,7 @@ export default function ContactSection() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0D9488] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0047AB] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
                 LAST PAGE <span className="opacity-40 font-normal">|</span> (04)
               </span>
             </motion.div>
@@ -119,9 +119,9 @@ export default function ContactSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-[#4B5563] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+              className="text-[#374151] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
             >
-              Interested in hiring, collaborating on AI/ML projects, or just having a chat?My inbox is always open.
+              Interested in hiring, collaborating on AI/ML projects, or just having a chat? My inbox is always open.
             </motion.p>
           </div>
 
@@ -137,16 +137,16 @@ export default function ContactSection() {
             {/* Top: Email Row */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-5 w-full">
               <div className="flex items-center gap-3.5 sm:gap-4 w-full sm:w-auto justify-start">
-                <div className="w-12 h-12 rounded-2xl bg-[#FFD000] border-[2.5px] border-[#111] shadow-[2.5px_2.5px_0px_0px_#111] flex items-center justify-center flex-shrink-0 text-[#111]">
+                <div className="w-12 h-12 rounded-2xl bg-[#0047AB] border-[2.5px] border-[#111] shadow-[2.5px_2.5px_0px_0px_#111] flex items-center justify-center flex-shrink-0 text-white">
                   <HiEnvelope className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col text-left overflow-hidden">
-                  <span className="text-[11px] font-black uppercase tracking-wider text-neutral-400">
+                  <span className="text-[11px] font-black uppercase tracking-wider text-[#374151]">
                     Direct Email
                   </span>
                   <a
                     href={`mailto:${EMAIL_ADDRESS}`}
-                    className="text-base sm:text-lg md:text-xl font-black text-[#111] hover:text-[#1D4ED8] transition-colors truncate"
+                    className="text-base sm:text-lg md:text-xl font-black text-[#111] hover:text-[#0047AB] transition-colors truncate"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                     title={EMAIL_ADDRESS}
                   >
@@ -161,7 +161,7 @@ export default function ContactSection() {
                 onClick={handleCopyEmail}
                 className={`w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-[2.5px] border-[#111] font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-150 cursor-pointer flex-shrink-0 select-none ${copied
                   ? "bg-green-400 text-[#111] shadow-[2px_2px_0px_0px_#111] translate-x-0.5 translate-y-0.5"
-                  : "bg-[#FFD000] hover:bg-[#FFE04D] text-[#111] shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111]"
+                  : "bg-[#E23636] hover:bg-[#DC2626] text-white shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111]"
                   }`}
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
                 aria-label="Salin alamat email"
@@ -185,7 +185,7 @@ export default function ContactSection() {
 
             {/* Bottom: Social Actions Row */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 w-full">
-              <span className="text-xs font-black uppercase tracking-wider text-neutral-500">
+              <span className="text-xs font-black uppercase tracking-wider text-[#374151]">
                 Social Profiles
               </span>
               <div className="flex items-center justify-center sm:justify-end gap-1.5 sm:gap-3 w-full sm:w-auto flex-nowrap">
@@ -195,7 +195,7 @@ export default function ContactSection() {
                     href={btn.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl border-[2px] border-[#111] bg-neutral-50 hover:bg-[#FFD000] text-[#111] font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-[2px_2px_0px_0px_#111] sm:shadow-[2.5px_2.5px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none whitespace-nowrap"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl border-[2px] border-[#111] bg-white hover:bg-[#FDB813] text-[#111] font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-[2px_2px_0px_0px_#111] sm:shadow-[2.5px_2.5px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none whitespace-nowrap"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                   >
                     <span className="flex items-center justify-center flex-shrink-0">{btn.icon}</span>

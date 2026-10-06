@@ -9,18 +9,15 @@ export default function Footer() {
 
   return (
     <footer
-      className="w-full py-8 border-t-2"
-      style={{
-        borderColor: "var(--color-border)",
-      }}
+      className="w-full py-8 border-t-[2.5px] border-[#111]"
     >
       <div className="max-w-[960px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <span
-          className="text-lg font-black"
+          className="text-lg font-black text-[#111]"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
-          Diaz<span style={{ color: "var(--color-blue)" }}>.</span>
+          Diaz<span className="text-[#0047AB]">.</span>
         </span>
 
 

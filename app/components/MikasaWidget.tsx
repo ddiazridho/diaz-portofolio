@@ -226,7 +226,7 @@ export default function MikasaWidget({
                 hover:-translate-x-px hover:-translate-y-px
                 hover:shadow-[3px_3px_0_#111]
                 active:translate-x-0 active:translate-y-0 active:shadow-none"
-              style={{ background: lang === "ID" ? "#FFD600" : undefined }}
+              style={{ background: lang === "ID" ? "#FDB813" : undefined }}
             >
               {lang}
             </button>
