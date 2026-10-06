@@ -81,7 +81,7 @@ export default function ContactSection() {
     <section
       id="contact"
       className="w-full scroll-mt-24 relative overflow-hidden"
-      style={{ background: "var(--color-bg)", borderTop: "1.5px solid var(--color-border)" }}
+      style={{ borderTop: "1.5px solid var(--color-border)" }}
     >
       <div className="w-full min-h-[85vh] flex flex-col items-center justify-center px-4 py-16 sm:py-24">
         <div className="flex max-w-2xl w-full flex-col items-center text-center">

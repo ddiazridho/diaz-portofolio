@@ -16,7 +16,7 @@ export default function AboutSection() {
     <section
       id="about"
       className="w-full scroll-mt-24 relative overflow-hidden"
-      style={{ background: "var(--color-surface)", borderTop: "1.5px solid var(--color-border)" }}
+      style={{ borderTop: "1.5px solid var(--color-border)" }}
     >
       {/* Wrapper matching HeroSection size */}
       <div className="section">
@@ -31,7 +31,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-yellow-400 text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#E9A825] text-[#111] font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
               About me<span className="opacity-40 font-normal">|</span> (01)
             </span>
           </motion.div>
@@ -85,7 +85,7 @@ export default function AboutSection() {
                 gap: '10px'
               }} className="border-[3px] border-[#111] bg-white rounded-2xl shadow-[6px_6px_0px_0px_#111] p-6 lg:p-8 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-yellow-400 flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#E9A825] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                   </div>
                   <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>WHO I AM</h3>
@@ -99,7 +99,7 @@ export default function AboutSection() {
 
               {/* Connector line for desktop */}
               <div className="hidden lg:block absolute top-1/4 -right-[24px] w-[24px] border-t-[3px] border-[#111] z-0"></div>
-              <div className="hidden lg:block absolute top-1/4 -right-[24px] w-4 h-4 rounded-full border-[3px] border-[#111] bg-yellow-400 translate-x-1/2 -translate-y-1/2 z-10 shadow-[2px_2px_0px_0px_#111]"></div>
+              <div className="hidden lg:block absolute top-1/4 -right-[24px] w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#E9A825] translate-x-1/2 -translate-y-1/2 z-10 shadow-[2px_2px_0px_0px_#111]"></div>
             </motion.div>
 
             {/* Education Section */}
@@ -112,7 +112,7 @@ export default function AboutSection() {
             >
               {/* Section heading */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-red-500 flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
+                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#E76F51] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
                 </div>
                 <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>EDUCATION</h3>
@@ -124,7 +124,7 @@ export default function AboutSection() {
                 {/* Education Card 1 */}
                 <div className="flex items-start gap-4">
                   {/* Dot */}
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-yellow-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#E76F51] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   {/* Card */}
                   <div style={{
                     padding: '15px',
@@ -134,9 +134,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>COMPUTER ENGINEERING</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-blue-300 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">Present</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E76F51] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">Present</span>
                     </div>
-                    <p className="text-blue-600 font-bold text-xs mb-2">Universitas Diponegoro</p>
+                    <p className="text-[#E76F51] font-bold text-xs mb-2">Universitas Diponegoro</p>
                     <p className="text-xs text-neutral-600 font-medium leading-relaxed">
                       Focused on artificial intelligence, large language model, data science.
                     </p>
@@ -145,7 +145,7 @@ export default function AboutSection() {
 
                 {/* Education Card 2 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-blue-300 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#E76F51] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
@@ -154,9 +154,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>SCIENCE MAJOR</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-blue-300 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 – 2025</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E76F51] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 – 2025</span>
                     </div>
-                    <p className="text-blue-600 font-bold text-xs mb-2">SMA PGRI 1 Pati</p>
+                    <p className="text-[#E76F51] font-bold text-xs mb-2">SMA PGRI 1 Pati</p>
                     <p className="text-xs text-neutral-600 font-medium leading-relaxed">
                       Learned strong academic fundamentals and developed good social skills.
                     </p>
@@ -180,7 +180,7 @@ export default function AboutSection() {
             >
               {/* Section heading */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-green-500 flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
+                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#2A9D8F] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
                 </div>
                 <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>EXPERIENCE</h3>
@@ -191,7 +191,7 @@ export default function AboutSection() {
 
                 {/* Exp Card 1 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-purple-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#2A9D8F] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
@@ -200,9 +200,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>TREASURER II</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-purple-400 text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 - 2023</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#2A9D8F] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2022 - 2023</span>
                     </div>
-                    <p className="text-purple-600 font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
+                    <p className="text-[#2A9D8F] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Assisted the Head Treasurer in managing operational budgets and routine cash flow.</li>
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Managed event budgets and recorded routine cash flows.</li>
@@ -212,7 +212,7 @@ export default function AboutSection() {
 
                 {/* Exp Card 2 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-cyan-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#2A9D8F] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
@@ -221,9 +221,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>GENERAL SECRETARY</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-cyan-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2023 – 2024</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#2A9D8F] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2023 – 2024</span>
                     </div>
-                    <p className="text-cyan-600 font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
+                    <p className="text-[#2A9D8F] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Handled official correspondence, documentation, and activity proposals.</li>
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Coordinated internal communications</li>
@@ -233,7 +233,7 @@ export default function AboutSection() {
 
                 {/* Exp Card 3 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-pink-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#2A9D8F] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
@@ -242,9 +242,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>GOOGLE STUDENT AMBASSADOR</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-pink-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#2A9D8F] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
                     </div>
-                    <p className="text-pink-600 font-bold text-xs mb-2">Google Indonesia</p>
+                    <p className="text-[#2A9D8F] font-bold text-xs mb-2">Google Indonesia</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Promoted Google technologies and programs across student communities.</li>
                     </ul>
@@ -253,7 +253,7 @@ export default function AboutSection() {
 
                 {/* Exp Card 4 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-orange-400 flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#2A9D8F] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
@@ -262,9 +262,9 @@ export default function AboutSection() {
                   }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>AI ENGINEER COHORT</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-orange-400 text-[#111] font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#2A9D8F] text-white font-bold text-[10px] shadow-[1px_1px_0px_0px_#111] whitespace-nowrap">2026</span>
                     </div>
-                    <p className="text-orange-600 font-bold text-xs mb-2">Dicoding</p>
+                    <p className="text-[#2A9D8F] font-bold text-xs mb-2">Dicoding</p>
                     <ul className="text-xs text-neutral-600 font-medium space-y-1">
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Studied machine learning and deep learning concepts through practical coursework.</li>
                       <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Completed end-to-end AI pipelines from data preprocessing to deployment.</li>

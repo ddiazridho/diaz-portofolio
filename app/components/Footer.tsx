@@ -12,7 +12,6 @@ export default function Footer() {
       className="w-full py-8 border-t-2"
       style={{
         borderColor: "var(--color-border)",
-        background: "var(--color-surface)",
       }}
     >
       <div className="max-w-[960px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">

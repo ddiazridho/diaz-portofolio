@@ -125,7 +125,11 @@ const fadeUp = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="w-full scroll-mt-24" style={{ background: "var(--color-bg)" }}>
+    <section
+      id="skills"
+      className="w-full scroll-mt-24 relative overflow-hidden"
+      style={{ borderTop: "1.5px solid var(--color-border)" }}
+    >
 
       <div className="section">
         {/* ── Neo-Brutalist Editorial Header ── */}

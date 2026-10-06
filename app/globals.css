@@ -5,7 +5,7 @@
 ───────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg: #F5F5F5;
+  --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
   --color-text: #111111;
   --color-text-muted: #666666;
@@ -53,12 +53,14 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-color: #FFFFFF;
 }
 
 body {
   background-color: var(--color-bg);
   background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
   background-size: 28px 28px;
+  background-repeat: repeat;
   color: var(--color-text);
   font-family: var(--font-body);
   min-height: 100vh;

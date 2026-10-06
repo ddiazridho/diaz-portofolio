@@ -66,7 +66,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       className="w-full scroll-mt-24 relative overflow-hidden"
-      style={{ background: "var(--color-surface)", borderTop: "1.5px solid var(--color-border)" }}
+      style={{ borderTop: "1.5px solid var(--color-border)" }}
     >
       <div className="section">
         {/* Header */}
