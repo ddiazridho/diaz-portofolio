@@ -27,7 +27,7 @@ export const translations = {
         title: "COMPUTER ENGINEERING",
         status: "Present",
         institution: "Universitas Diponegoro",
-        desc: "Focused on artificial intelligence, large language model, data science.",
+        desc: "Focused on artificial intelligence, software, data science.",
       },
       edu2: {
         title: "SCIENCE MAJOR",
@@ -127,7 +127,7 @@ export const translations = {
         title: "COMPUTER ENGINEERING",
         status: "Sekarang",
         institution: "Universitas Diponegoro",
-        desc: "Fokus pada artificial intelligence, large language model, dan data science.",
+        desc: "Fokus pada artificial intelligence, software, dan data science.",
       },
       edu2: {
         title: "SCIENCE MAJOR",
