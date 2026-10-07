@@ -26,6 +26,7 @@ import {
   BotMessageSquare,
   CloudLightning,
 } from "lucide-react";
+import { useThemeLanguage } from "@/app/context/ThemeLanguageContext";
 
 interface SkillItem {
   name: string;
@@ -124,6 +125,8 @@ const fadeUp = {
 };
 
 export default function SkillsSection() {
+  const { t } = useThemeLanguage();
+
   return (
     <section
       id="skills"
@@ -143,7 +146,7 @@ export default function SkillsSection() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
-              DEV STACK <span className="opacity-40 font-normal">|</span> (02)
+              {t.skills.badge} <span className="opacity-40 font-normal">|</span> (02)
             </span>
           </motion.div>
 
@@ -157,7 +160,7 @@ export default function SkillsSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            TECHNOLOGY I USE <br />
+            {t.skills.title} <br />
           </motion.h2>
 
           {/* Subtitle */}
@@ -169,7 +172,7 @@ export default function SkillsSection() {
             viewport={{ once: true }}
             className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
-            The core tech stack, frameworks, and modern tools I leverage to build scalable and intelligent software.
+            {t.skills.subtitle}
           </motion.p>
         </div>
 
@@ -199,7 +202,7 @@ export default function SkillsSection() {
                 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
-                Tools & Frameworks
+                {t.skills.toolsTitle}
               </h3>
             </div>
 
@@ -244,7 +247,7 @@ export default function SkillsSection() {
                 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
-                AI & MLOps
+                {t.skills.aiTitle}
               </h3>
             </div>
 

@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { useThemeLanguage } from "@/app/context/ThemeLanguageContext";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -41,6 +42,7 @@ const actionCards = [
 ];
 
 export default function ContactSection() {
+  const { t } = useThemeLanguage();
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -95,7 +97,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
             >
               <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
-                LAST PAGE <span className="opacity-40 font-normal">|</span> (04)
+                {t.contact.badge} <span className="opacity-40 font-normal">|</span> (04)
               </span>
             </motion.div>
 
@@ -109,7 +111,7 @@ export default function ContactSection() {
               className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              CONTACT ME<br />
+              {t.contact.title}<br />
             </motion.h2>
 
             {/* Subtitle */}
@@ -121,7 +123,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
             >
-              Interested in hiring, collaborating on AI/ML projects, or just having a chat? My inbox is always open.
+              {t.contact.subtitle}
             </motion.p>
           </div>
 
@@ -142,7 +144,7 @@ export default function ContactSection() {
                 </div>
                 <div className="flex flex-col text-left overflow-hidden">
                   <span className="text-[11px] font-black uppercase tracking-wider text-[#374151] dark:text-slate-400">
-                    Direct Email
+                    {t.contact.directEmail}
                   </span>
                   <a
                     href={`mailto:${EMAIL_ADDRESS}`}
@@ -169,12 +171,12 @@ export default function ContactSection() {
                 {copied ? (
                   <>
                     <HiCheck className="w-4 h-4 stroke-[3]" />
-                    <span>TERSALIN!</span>
+                    <span>{t.contact.copied}</span>
                   </>
                 ) : (
                   <>
                     <HiClipboardDocument className="w-4 h-4" />
-                    <span>SALIN EMAIL</span>
+                    <span>{t.contact.copyEmail}</span>
                   </>
                 )}
               </button>
@@ -186,7 +188,7 @@ export default function ContactSection() {
             {/* Bottom: Social Actions Row */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 w-full">
               <span className="text-xs font-black uppercase tracking-wider text-[#374151] dark:text-slate-400">
-                Social Profiles
+                {t.contact.socialProfiles}
               </span>
               <div className="flex items-center justify-center sm:justify-end gap-1.5 sm:gap-3 w-full sm:w-auto flex-nowrap">
                 {actionCards.map((btn) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { translations, Translations } from "../data/translations";
 
 type Theme = "light" | "dark";
 type Language = "en" | "id";
@@ -8,6 +9,7 @@ type Language = "en" | "id";
 interface ThemeLanguageContextType {
   theme: Theme;
   language: Language;
+  t: Translations;
   toggleTheme: () => void;
   setTheme: (theme: Theme) => void;
   toggleLanguage: () => void;
@@ -48,6 +50,9 @@ export function ThemeLanguageProvider({
     const savedLang = localStorage.getItem("lang") as Language | null;
     if (savedLang === "en" || savedLang === "id") {
       setLanguageState(savedLang);
+      document.documentElement.lang = savedLang;
+    } else {
+      document.documentElement.lang = "en";
     }
 
     setMounted(true);
@@ -78,6 +83,7 @@ export function ThemeLanguageProvider({
   const setLanguage = (newLang: Language) => {
     setLanguageState(newLang);
     localStorage.setItem("lang", newLang);
+    document.documentElement.lang = newLang;
   };
 
   const toggleLanguage = () => {
@@ -85,11 +91,14 @@ export function ThemeLanguageProvider({
     setLanguage(nextLang);
   };
 
+  const t = translations[language] || translations.en;
+
   return (
     <ThemeLanguageContext.Provider
       value={{
         theme,
         language,
+        t,
         toggleTheme,
         setTheme,
         toggleLanguage,
@@ -110,3 +119,4 @@ export function useThemeLanguage() {
   }
   return context;
 }
+

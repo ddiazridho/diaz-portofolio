@@ -9,19 +9,21 @@ import {
   HiOutlineEnvelope,
 } from "react-icons/hi2";
 import ThemeLanguageToggle from "./ThemeLanguageToggle";
-
-const NAV_LINKS = [
-  { href: "#about", label: "About", Icon: HiOutlineUser },
-  { href: "#skills", label: "Skills", Icon: HiOutlineCodeBracket },
-  { href: "#projects", label: "Projects", Icon: HiOutlineBriefcase },
-  { href: "#contact", label: "Contact", Icon: HiOutlineEnvelope },
-];
+import { useThemeLanguage } from "../context/ThemeLanguageContext";
 
 const SECTION_IDS = ["hero", "about", "skills", "projects", "contact"];
 
 export default function Navbar() {
+  const { t } = useThemeLanguage();
   const [active, setActive] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
+
+  const navLinks = [
+    { href: "#about", label: t.nav.about, Icon: HiOutlineUser },
+    { href: "#skills", label: t.nav.skills, Icon: HiOutlineCodeBracket },
+    { href: "#projects", label: t.nav.projects, Icon: HiOutlineBriefcase },
+    { href: "#contact", label: t.nav.contact, Icon: HiOutlineEnvelope },
+  ];
 
   /* ── Scroll-spy via IntersectionObserver ── */
   useEffect(() => {
@@ -91,7 +93,7 @@ export default function Navbar() {
 
         {/* Center links: Icons on mobile (< md), text on desktop (md+) */}
         <ul className="flex items-center gap-1 sm:gap-1.5 md:gap-1" role="list">
-          {NAV_LINKS.map(({ href, label, Icon }) => {
+          {navLinks.map(({ href, label, Icon }) => {
             const isActive = active === href;
             return (
               <li key={href}>
@@ -132,7 +134,7 @@ export default function Navbar() {
             onClick={(e) => handleNav(e, "#contact")}
             className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] dark:border-slate-200 bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] dark:hover:shadow-[2px_2px_0_#38BDF8] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
-            <span>Hire Me</span>
+            <span>{t.nav.hireMe}</span>
           </a>
         </div>
 

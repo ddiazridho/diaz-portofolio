@@ -3,6 +3,7 @@
 import { HiArrowTopRightOnSquare, HiEnvelope } from "react-icons/hi2";
 import HeroPhoto from "./HeroPhoto";
 import RotatingText from "./RotatingText";
+import { useThemeLanguage } from "../context/ThemeLanguageContext";
 
 /** Inline SVG squiggle underline — hand-drawn yellow wave */
 function SquiggleUnderline() {
@@ -45,6 +46,7 @@ function SquiggleUnderline() {
 }
 
 export default function HeroSection() {
+  const { t } = useThemeLanguage();
   return (
     <section
       id="hero"
@@ -89,7 +91,7 @@ export default function HeroSection() {
                   }}
                   className="block text-2xl sm:text-3xl lg:text-3xl font-black text-[#111] dark:text-[#F8FAFC] -mb-1 lg:-mb-1 [-webkit-text-stroke:1px_#111] dark:[-webkit-text-stroke:1px_#F8FAFC]"
                 >
-                  I'm
+                  {t.hero.im}
                 </span>
                 <span
                   className="block text-[#0047AB] dark:text-[#38BDF8] font-black leading-tight tracking-tight sm:whitespace-nowrap [-webkit-text-stroke:1px_#0047AB] dark:[-webkit-text-stroke:1px_#38BDF8]"
@@ -120,7 +122,7 @@ export default function HeroSection() {
                 className="text-[#374151] dark:text-slate-300 text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#0047AB] dark:border-[#38BDF8] pl-3 italic"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                "Computer Engineering student specializing in AI and Software Engineering. Passionate about designing, fine-tuning, and deploying scalable machine learning models into production-ready software."
+                {t.hero.tagline}
               </p>
             </div>
 
@@ -143,7 +145,7 @@ export default function HeroSection() {
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <HiArrowTopRightOnSquare className="w-4 h-4 stroke-[1]" aria-hidden="true" />
-                Look CV
+                {t.hero.lookCv}
               </a>
 
               {/* Secondary - Kontak */}
@@ -158,7 +160,7 @@ export default function HeroSection() {
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <HiEnvelope className="w-4 h-4" aria-hidden="true" />
-                Contact
+                {t.hero.contact}
               </a>
             </div>
 

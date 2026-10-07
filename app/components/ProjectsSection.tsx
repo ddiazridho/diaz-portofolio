@@ -6,6 +6,7 @@ import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import { SiGithub, SiPython, SiDocker, SiFastapi, SiHuggingface, SiLaravel, SiPostgresql } from "react-icons/si";
 import { RiOpenaiFill } from "react-icons/ri";
 import { Bot } from "lucide-react";
+import { useThemeLanguage } from "@/app/context/ThemeLanguageContext";
 
 interface ProjectTag {
   name: string;
@@ -62,6 +63,19 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsSection() {
+  const { t } = useThemeLanguage();
+
+  const localizedProjects = [
+    {
+      ...projects[0],
+      description: t.projects.jobfitDesc,
+    },
+    {
+      ...projects[1],
+      description: t.projects.openclawDesc,
+    },
+  ];
+
   return (
     <section
       id="projects"
@@ -79,7 +93,7 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
-              Projects <span className="opacity-40 font-normal">|</span> (03)
+              {t.projects.badge} <span className="opacity-40 font-normal">|</span> (03)
             </span>
           </motion.div>
 
@@ -93,7 +107,7 @@ export default function ProjectsSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            THINGS I`VE BUILT <br />
+            {t.projects.title} <br />
           </motion.h2>
 
           {/* Subtitle */}
@@ -105,13 +119,13 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
-            A selection of end-to-end applications, experiments, and production-ready systems I've built.
+            {t.projects.subtitle}
           </motion.p>
         </div>
 
         {/* Grid 2 Kolom (Desktop) / 1 Kolom (Mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-          {projects.map((project, index) => (
+          {localizedProjects.map((project, index) => (
             <motion.article
               key={project.title}
               variants={fadeUp}
@@ -171,7 +185,7 @@ export default function ProjectsSection() {
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 <SiGithub className="w-4 h-4 text-white" />
-                <span>GITHUB</span>
+                <span>{t.projects.githubBtn}</span>
                 <HiArrowTopRightOnSquare className="w-4 h-4 stroke-[2]" />
               </a>
             </motion.article>
