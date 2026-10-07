@@ -3,6 +3,7 @@
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa6";
 import { HiEnvelope } from "react-icons/hi2";
+import ThemeLanguageToggle from "./ThemeLanguageToggle";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -19,6 +20,11 @@ export default function Footer() {
         >
           Diaz<span className="text-[#0047AB]">.</span>
         </span>
+
+        {/* Mobile Theme Changer & Translator (< md) */}
+        <div className="flex md:hidden items-center justify-center">
+          <ThemeLanguageToggle />
+        </div>
 
 
         {/* Social icons */}

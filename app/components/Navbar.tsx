@@ -8,7 +8,7 @@ import {
   HiOutlineBriefcase,
   HiOutlineEnvelope,
 } from "react-icons/hi2";
-import MikasaWidget from "./MikasaWidget";
+import ThemeLanguageToggle from "./ThemeLanguageToggle";
 
 const NAV_LINKS = [
   { href: "#about", label: "About", Icon: HiOutlineUser },
@@ -131,8 +131,10 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mikasa Widget: anchored directly below the right of the navbar */}
-        <MikasaWidget />
+        {/* Desktop floating Theme Changer & Translator (Language Toggle) — placed directly to the right side outside of the main navbar */}
+        <div className="hidden md:flex items-center absolute left-[calc(100%+14px)] top-1/2 -translate-y-1/2">
+          <ThemeLanguageToggle />
+        </div>
       </nav>
     </>
   );
