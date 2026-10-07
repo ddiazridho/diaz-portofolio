@@ -18,14 +18,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Diaz R. Yuristianto",
+  title: "Diaz Ridho Yuristianto",
   description:
-    "Portfolio of Diaz R. Yuristianto",
-  keywords: ["Software Engineer", "AI Engineer", "React", "Next.js", "portfolio"],
+    "Portfolio of Diaz Ridho Yuristianto, a Computer Engineering student at Universitas Diponegoro.",
+  verification: {
+    google: 'H82awMrSBd83WSwFMD1POxzdGAPFrSgnqOHFXzL9QRY',
+  },
+  keywords: ["Software Engineer", "AI Engineer", "React", "Next.js", "portfolio", "Computer Engineering", "Universitas Diponegoro"],
   authors: [{ name: "Diaz Ridho" }],
   openGraph: {
-    title: "Diaz R. Yuristianto",
-    description: "Portfolio of Diaz R. Yuristianto",
+    title: "Diaz Ridho Yuristianto",
+    description: "Portfolio of Diaz Ridho Yuristianto",
     type: "website",
   },
 };
