@@ -8,7 +8,7 @@ import {
   HiOutlineBriefcase,
   HiOutlineEnvelope,
 } from "react-icons/hi2";
-import ThemeLanguageToggle from "./ThemeLanguageToggle";
+import MikasaWidget from "./MikasaWidget";
 
 const NAV_LINKS = [
   { href: "#about", label: "About", Icon: HiOutlineUser },
@@ -60,8 +60,8 @@ export default function Navbar() {
   }, []);
 
   const pillSize = scrolled
-    ? "h-12 w-[min(90%,760px)] md:w-[min(calc(100%-220px),800px)]"
-    : "h-14 w-[min(92%,840px)] md:w-[min(calc(100%-220px),860px)]";
+    ? "h-12 w-[min(88%,880px)]"
+    : "h-14 w-[min(92%,960px)]";
 
   return (
     <>
@@ -71,9 +71,9 @@ export default function Navbar() {
         className={`
           fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 sm:px-6 md:px-8 box-border
           flex items-center justify-between
-          bg-white/80 dark:bg-[#1E1E1E]/80 backdrop-blur-md
-          rounded-full border-2 border-[#111] dark:border-[#EEEEEE]
-          shadow-[4px_4px_0_#111] dark:shadow-[4px_4px_0_#EEEEEE]
+          bg-white/80 backdrop-blur-md
+          rounded-full border-2 border-[#111]
+          shadow-[4px_4px_0_#111]
           transition-all duration-200
           ${pillSize}
         `}
@@ -84,7 +84,7 @@ export default function Navbar() {
           className="flex items-center gap-1.5 sm:gap-2 shrink-0 pl-1 sm:pl-3"
           aria-label="Home"
         >
-          <span className="font-black text-base sm:text-lg tracking-tight leading-none text-[#111] dark:text-[#F3F4F6]">
+          <span className="font-black text-base sm:text-lg tracking-tight leading-none text-[#111]">
             Diaz<span className="text-[#0047AB]">.</span>
           </span>
         </Link>
@@ -106,8 +106,8 @@ export default function Navbar() {
                     w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto md:px-4 md:py-2
                     ${
                       isActive
-                        ? "bg-[#111] dark:bg-[#EEEEEE] text-white dark:text-[#111] shadow-[2px_2px_0_#111] dark:shadow-[2px_2px_0_#EEEEEE]"
-                        : "text-[#111] dark:text-[#F3F4F6] hover:bg-[#111]/5 dark:hover:bg-white/10"
+                        ? "bg-[#111] text-white shadow-[2px_2px_0_#111]"
+                        : "text-[#111] hover:bg-[#111]/5"
                     }
                   `}
                 >
@@ -125,16 +125,14 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] dark:border-[#EEEEEE] bg-[#E23636] hover:bg-[#DC2626] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] dark:hover:shadow-[2px_2px_0_#EEEEEE] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] bg-[#E23636] hover:bg-[#DC2626] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
             <span>Hire Me</span>
           </a>
         </div>
 
-        {/* Desktop floating Theme Changer & Translator (Language Toggle) — floating right outside navbar */}
-        <div className="hidden md:flex items-center absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2">
-          <ThemeLanguageToggle />
-        </div>
+        {/* Mikasa Widget: anchored directly below the right of the navbar */}
+        <MikasaWidget />
       </nav>
     </>
   );

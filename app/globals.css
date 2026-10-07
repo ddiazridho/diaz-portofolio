@@ -38,18 +38,6 @@
   --shadow-btn: 3px 3px 0px #111111;
 }
 
-[data-theme="dark"],
-.dark {
-  --color-bg: #121212;
-  --color-surface: #1E1E1E;
-  --color-text: #F3F4F6;
-  --color-text-muted: #9CA3AF;
-  --color-border: #EEEEEE;
-  --shadow-card: 4px 4px 0px #EEEEEE;
-  --shadow-card-hover: 8px 8px 0px #EEEEEE;
-  --shadow-btn: 3px 3px 0px #EEEEEE;
-}
-
 /* ─────────────────────────────────────
    TAILWIND THEME EXTENSION
 ───────────────────────────────────── */
@@ -63,10 +51,11 @@
    RESET & BASE
 ───────────────────────────────────── */
 
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--color-bg);
+  background-color: #FFFFFF;
 }
 
 body {
@@ -93,13 +82,6 @@ body::before {
   background-repeat: repeat;
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%);
   mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%);
-}
-
-[data-theme="dark"] body::before,
-.dark body::before {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
 /* ─────────────────────────────────────

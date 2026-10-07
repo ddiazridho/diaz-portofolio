@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import FlyingMascot from "./components/FlyingMascot";
 import WalkingMascot from "./components/WalkingMascot";
-import { ThemeLanguageProvider } from "./context/ThemeLanguageContext";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -41,9 +40,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <ThemeLanguageProvider>
-          {children}
-        </ThemeLanguageProvider>
+        {children}
         <FlyingMascot />
         <WalkingMascot
           src="/Red Larva.png"
