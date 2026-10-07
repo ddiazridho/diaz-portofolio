@@ -52,12 +52,12 @@ export default function HeroSection() {
       style={{ paddingBottom: "1px" /* clear mobile bottom tab */ }}
     >
       {/* ── Main container ── */}
-      <div className="section" style={{ paddingTop: "88px", paddingBottom: "32px" }}>
+      <div className="section" style={{ paddingTop: "112px", paddingBottom: "36px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10">
 
           {/* ══ PHOTO COLUMN — LEFT ══ */}
           <div
-            className="lg:-mt-30 lg:col-span-5 flex justify-center lg:justify-start
+            className="lg:-mt-8 lg:col-span-5 flex justify-center lg:justify-start
               motion-safe:animate-[slideInLeft_500ms_cubic-bezier(0.16,1,0.3,1)_both]"
           >
             <HeroPhoto src="/DIAZ PHOTO.png" />
