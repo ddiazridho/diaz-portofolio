@@ -53,7 +53,7 @@
   --color-surface: #121826;
   --color-surface-hover: #182236;
   --color-surface-subtle: #1e293b;
-  
+
   /* Inverted High-Contrast Typography */
   --color-text: #F8FAFC;
   --color-text-muted: #94A3B8;
@@ -78,6 +78,22 @@
   /* Glowing, subtle grid lines */
   --grid-line: rgba(56, 189, 248, 0.08);
   --grid-mask: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0) 80%);
+}
+
+/*zoom body untuk mengurangi agar tidak terlalu besar */
+body {
+  zoom: 0.85;
+  /* Bekerja langsung di Chrome, Edge, Safari */
+}
+
+/* Fallback untuk Firefox (karena Firefox tidak mendukung properti zoom standar) */
+@-moz-document url-prefix() {
+  body {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 111.11%;
+    /* Mengimbangi scale agar tidak menyisakan ruang kosong di kanan */
+  }
 }
 
 /* ─────────────────────────────────────

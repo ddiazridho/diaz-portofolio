@@ -54,7 +54,7 @@ export default function HeroSection() {
       style={{ paddingBottom: "1px" /* clear mobile bottom tab */ }}
     >
       {/* ── Main container ── */}
-      <div className="section" style={{ paddingTop: "112px", paddingBottom: "36px" }}>
+      <div className="section" style={{ paddingTop: "150px", paddingBottom: "36px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10">
 
           {/* ══ PHOTO COLUMN — LEFT ══ */}
