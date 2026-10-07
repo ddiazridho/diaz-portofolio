@@ -105,7 +105,7 @@ export const translations = {
       skills: "Skills",
       projects: "Proyek",
       contact: "Kontak",
-      hireMe: "Rekrut Saya",
+      hireMe: "Rekrut",
     },
     hero: {
       im: "Saya",
@@ -119,7 +119,7 @@ export const translations = {
       title: "LATAR BELAKANG",
       subtitle:
         "Pengalaman, pendidikan, dan pencapaian di balik sistem yang saya rancang dan bangun.",
-      whoIAm: "SIAPA SAYA",
+      whoIAm: "SAYA",
       whoIAmText:
         "Saya mahasiswa Teknik Komputer di Universitas Diponegoro dengan fokus kuat pada AI/ML Engineering. Terampil dalam mengembangkan siklus penuh sistem AI, mulai dari persiapan data dan arsitektur model hingga deployment. Memiliki pemahaman fundamental yang kokoh terhadap prinsip-prinsip inti AI.",
       education: "PENDIDIKAN",
@@ -171,7 +171,7 @@ export const translations = {
     },
     skills: {
       badge: "DEV STACK",
-      title: "TEKNOLOGI YANG DIGUNAKAN",
+      title: "TEKNOLOGI",
       subtitle:
         "Tech stack inti, framework, dan tools modern yang saya manfaatkan untuk membangun software cerdas dan skalabel.",
       toolsTitle: "Tools & Frameworks",
@@ -179,7 +179,7 @@ export const translations = {
     },
     projects: {
       badge: "Proyek",
-      title: "KARYA YANG DIBANGUN",
+      title: "PROYEK SAYA",
       subtitle:
         "Pilihan aplikasi end-to-end, eksperimen, dan sistem siap-produksi yang telah saya bangun.",
       jobfitDesc:
