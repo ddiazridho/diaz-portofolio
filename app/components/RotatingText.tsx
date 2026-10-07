@@ -25,7 +25,7 @@ export default function RotatingText() {
 
   return (
     <span
-      className="inline-block text-xl md:text-2xl font-semibold text-[#111]"
+      className="inline-block text-xl md:text-2xl font-semibold text-[#111] dark:text-[#F8FAFC]"
       style={{
         fontFamily: "var(--font-space-grotesk)",
         opacity: visible ? 1 : 0,

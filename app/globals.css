@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─────────────────────────────────────
    DESIGN TOKENS
 ───────────────────────────────────── */
@@ -7,6 +9,8 @@
   /* Colors */
   --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-surface-subtle: #F1F5F9;
   --color-text: #111111;
   --color-text-muted: #374151;
   --color-border: #111111;
@@ -33,9 +37,47 @@
   --radius-full: 9999px;
 
   /* Crisp Neobrutalist Hard Shadows */
+  --shadow-color: #111111;
   --shadow-card: 4px 4px 0px #111111;
   --shadow-card-hover: 8px 8px 0px #111111;
   --shadow-btn: 3px 3px 0px #111111;
+
+  /* Grid pattern line & mask */
+  --grid-line: rgba(0, 0, 0, 0.07);
+  --grid-mask: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%);
+}
+
+.dark {
+  /* Dark Mode Base — Deep, dark hue */
+  --color-bg: #0a0d14;
+  --color-surface: #121826;
+  --color-surface-hover: #182236;
+  --color-surface-subtle: #1e293b;
+  
+  /* Inverted High-Contrast Typography */
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border: #E2E8F0;
+
+  /* Recalibrated Spider-Man Palette for Dark Surfaces */
+  --color-blue: #38BDF8;
+  --color-blue-dark: #0284C7;
+  --color-red: #EF4444;
+  --color-red-dark: #DC2626;
+  --color-yellow: #FACC15;
+  --color-yellow-dark: #EAB308;
+  --color-teal: #2DD4BF;
+  --color-green: #22C55E;
+
+  /* Neo-Brutalist Hard Shadows in Dark Mode (Adaptive Vibrant Cobalt / Electric Cyan) */
+  --shadow-color: #0047AB;
+  --shadow-card: 4px 4px 0px #0047AB;
+  --shadow-card-hover: 8px 8px 0px #38BDF8;
+  --shadow-btn: 3px 3px 0px #38BDF8;
+
+  /* Glowing, subtle grid lines */
+  --grid-line: rgba(56, 189, 248, 0.08);
+  --grid-mask: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0) 80%);
 }
 
 /* ─────────────────────────────────────
@@ -51,11 +93,15 @@
    RESET & BASE
 ───────────────────────────────────── */
 
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #FFFFFF;
+  background-color: var(--color-bg);
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -67,6 +113,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   isolation: isolate;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body::before {
@@ -76,12 +123,13 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 30px 30px;
   background-repeat: repeat;
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%);
-  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%);
+  -webkit-mask-image: var(--grid-mask);
+  mask-image: var(--grid-mask);
+  transition: background-image 0.25s ease;
 }
 
 /* ─────────────────────────────────────
@@ -295,7 +343,7 @@ h5 {
   font-family: var(--font-hero);
   font-size: 0.9rem;
   font-weight: 700;
-  border: 2.5px solid var(--color-text);
+  border: 2.5px solid var(--color-border);
   border-radius: var(--radius-full);
   cursor: pointer;
   text-decoration: none;
@@ -305,7 +353,7 @@ h5 {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 4px 4px 0px var(--color-text);
+  box-shadow: var(--shadow-btn);
   background: var(--color-red-dark);
 }
 
@@ -324,7 +372,7 @@ h5 {
   font-family: var(--font-hero);
   font-size: 0.9rem;
   font-weight: 600;
-  border: 2.5px solid var(--color-text);
+  border: 2.5px solid var(--color-border);
   border-radius: var(--radius-full);
   cursor: pointer;
   text-decoration: none;
@@ -334,8 +382,8 @@ h5 {
 
 .btn-secondary:hover {
   transform: translateY(-2px);
-  box-shadow: 4px 4px 0px var(--color-text);
-  background: rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-btn);
+  background: rgba(125, 125, 125, 0.08);
 }
 
 .btn-secondary:active {
@@ -380,5 +428,5 @@ h5 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #bbb;
+  background: var(--color-text-muted);
 }

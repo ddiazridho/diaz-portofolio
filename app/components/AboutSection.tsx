@@ -30,7 +30,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0047AB] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
               About me<span className="opacity-40 font-normal">|</span> (01)
             </span>
           </motion.div>
@@ -42,11 +42,10 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             BACKGROUND <br />
-
           </motion.h2>
 
           {/* Subtitle */}
@@ -56,7 +55,7 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-[#374151] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             The experiences, education, and milestones behind the systems I design and build.
           </motion.p>
@@ -82,14 +81,14 @@ export default function AboutSection() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '10px'
-              }} className="border-[3px] border-[#111] bg-white rounded-2xl shadow-[6px_6px_0px_0px_#111] p-6 lg:p-8 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200">
+              }} className="border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[6px_6px_0px_0px_#111] dark:shadow-[6px_6px_0px_0px_#0047AB] p-6 lg:p-8 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] dark:hover:shadow-[8px_8px_0px_0px_#38BDF8] transition-all duration-200">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0 text-white">
+                  <div className="w-10 h-10 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] flex-shrink-0 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                   </div>
-                  <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>WHO I AM</h3>
+                  <h3 className="text-xl font-black uppercase tracking-wide text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>WHO I AM</h3>
                 </div>
-                <div className="text-[#374151] text-sm font-medium leading-relaxed">
+                <div className="text-[#374151] dark:text-slate-300 text-sm font-medium leading-relaxed">
                   <p>
                     I'm a Computer Engineering student at Universitas Diponegoro with strong focus in AI/ML Engineering. Skilled at developing full-lifecycle AI systems, from data preparation and model architecture to deployment. With a solid foundational understanding of core AI principles.
                   </p>
@@ -107,32 +106,32 @@ export default function AboutSection() {
             >
               {/* Section heading */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0 text-white">
+                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] flex-shrink-0 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>EDUCATION</h3>
+                <h3 className="text-xl font-black uppercase tracking-wide text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>EDUCATION</h3>
               </div>
 
               {/* Timeline track */}
-              <div className="flex flex-col gap-4 pl-5 border-l-[3px] border-[#111] ml-5">
+              <div className="flex flex-col gap-4 pl-5 border-l-[3px] border-[#111] dark:border-slate-700 ml-5">
 
                 {/* Education Card 1 */}
                 <div className="flex items-start gap-4">
                   {/* Dot */}
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   {/* Card */}
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>COMPUTER ENGINEERING</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">Present</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>COMPUTER ENGINEERING</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">Present</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">Universitas Diponegoro</p>
-                    <p className="text-xs text-[#374151] font-medium leading-relaxed">
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">Universitas Diponegoro</p>
+                    <p className="text-xs text-[#374151] dark:text-slate-300 font-medium leading-relaxed">
                       Focused on artificial intelligence, large language model, data science.
                     </p>
                   </div>
@@ -140,19 +139,19 @@ export default function AboutSection() {
 
                 {/* Education Card 2 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>SCIENCE MAJOR</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">2022 – 2025</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>SCIENCE MAJOR</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">2022 – 2025</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">SMA PGRI 1 Pati</p>
-                    <p className="text-xs text-[#374151] font-medium leading-relaxed">
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">SMA PGRI 1 Pati</p>
+                    <p className="text-xs text-[#374151] dark:text-slate-300 font-medium leading-relaxed">
                       Learned strong academic fundamentals and developed good social skills.
                     </p>
                   </div>
@@ -175,94 +174,94 @@ export default function AboutSection() {
             >
               {/* Section heading */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] flex-shrink-0 text-white">
+                <div className="w-10 h-10 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] flex items-center justify-center shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] flex-shrink-0 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>EXPERIENCE</h3>
+                <h3 className="text-xl font-black uppercase tracking-wide text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>EXPERIENCE</h3>
               </div>
 
               {/* Timeline track */}
-              <div className="flex flex-col gap-4 pl-5 border-l-[3px] border-[#111] ml-5">
+              <div className="flex flex-col gap-4 pl-5 border-l-[3px] border-[#111] dark:border-slate-700 ml-5">
 
                 {/* Exp Card 1 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>TREASURER II</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">2022 - 2023</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>TREASURER II</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">2022 - 2023</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
-                    <ul className="text-xs text-[#374151] font-medium space-y-1">
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Assisted the Head Treasurer in managing operational budgets and routine cash flow.</li>
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Managed event budgets and recorded routine cash flows.</li>
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
+                    <ul className="text-xs text-[#374151] dark:text-slate-300 font-medium space-y-1">
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Assisted the Head Treasurer in managing operational budgets and routine cash flow.</li>
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Managed event budgets and recorded routine cash flows.</li>
                     </ul>
                   </div>
                 </div>
 
                 {/* Exp Card 2 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>GENERAL SECRETARY</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">2023 – 2024</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>GENERAL SECRETARY</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">2023 – 2024</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
-                    <ul className="text-xs text-[#374151] font-medium space-y-1">
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Handled official correspondence, documentation, and activity proposals.</li>
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Coordinated internal communications</li>
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">OSIS SMA PGRI 1 Pati</p>
+                    <ul className="text-xs text-[#374151] dark:text-slate-300 font-medium space-y-1">
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Handled official correspondence, documentation, and activity proposals.</li>
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Coordinated internal communications</li>
                     </ul>
                   </div>
                 </div>
 
                 {/* Exp Card 3 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>GOOGLE STUDENT AMBASSADOR</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">2026</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>GOOGLE STUDENT AMBASSADOR</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">2026</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">Google Indonesia</p>
-                    <ul className="text-xs text-[#374151] font-medium space-y-1">
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Promoted Google technologies and programs across student communities.</li>
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">Google Indonesia</p>
+                    <ul className="text-xs text-[#374151] dark:text-slate-300 font-medium space-y-1">
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Promoted Google technologies and programs across student communities.</li>
                     </ul>
                   </div>
                 </div>
 
                 {/* Exp Card 4 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] bg-[#0047AB] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111]"></div>
+                  <div className="w-4 h-4 rounded-full border-[3px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#38BDF8] flex-shrink-0 mt-5 -ml-[22px] shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB]"></div>
                   <div style={{
                     padding: '15px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px'
-                  }} className="flex-1 border-[3px] border-[#111] bg-white rounded-2xl shadow-[4px_4px_0px_0px_#111] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] transition-all duration-200">
+                  }} className="flex-1 border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl shadow-[4px_4px_0px_0px_#111] dark:shadow-[4px_4px_0px_0px_#0047AB] p-5 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#111] dark:hover:shadow-[6px_6px_0px_0px_#38BDF8] transition-all duration-200">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h4 className="text-sm font-black uppercase tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>AI ENGINEER COHORT</h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] bg-[#E23636] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] whitespace-nowrap">2026</span>
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]" style={{ fontFamily: "var(--font-space-grotesk)" }}>AI ENGINEER COHORT</h4>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full border-[2px] border-[#111] dark:border-slate-200 bg-[#E23636] dark:bg-[#EF4444] text-white font-bold text-[10px] shadow-[1.5px_1.5px_0px_0px_#111] dark:shadow-[1.5px_1.5px_0px_0px_#38BDF8] whitespace-nowrap">2026</span>
                     </div>
-                    <p className="text-[#0047AB] font-bold text-xs mb-2">Dicoding</p>
-                    <ul className="text-xs text-[#374151] font-medium space-y-1">
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Studied machine learning and deep learning concepts through practical coursework.</li>
-                      <li className="flex items-start gap-2"><span className="text-[#111] font-black mt-0.5 flex-shrink-0">■</span>Completed end-to-end AI pipelines from data preprocessing to deployment.</li>
+                    <p className="text-[#0047AB] dark:text-[#38BDF8] font-bold text-xs mb-2">Dicoding</p>
+                    <ul className="text-xs text-[#374151] dark:text-slate-300 font-medium space-y-1">
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Studied machine learning and deep learning concepts through practical coursework.</li>
+                      <li className="flex items-start gap-2"><span className="text-[#111] dark:text-[#38BDF8] font-black mt-0.5 flex-shrink-0">■</span>Completed end-to-end AI pipelines from data preprocessing to deployment.</li>
                     </ul>
                   </div>
                 </div>

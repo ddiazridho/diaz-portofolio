@@ -83,18 +83,19 @@ export default function HeroSection() {
                   fontFamily: "var(--font-space-grotesk)",
                 }}
               >
-                <span style={{
-                  WebkitTextStroke: '1px #000000',
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)"
-                }} className="block text-2xl sm:text-3xl lg:text-3xl font-black text-[#111] -mb-1 lg:-mb-1">
+                <span
+                  style={{
+                    fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)",
+                  }}
+                  className="block text-2xl sm:text-3xl lg:text-3xl font-black text-[#111] dark:text-[#F8FAFC] -mb-1 lg:-mb-1 [-webkit-text-stroke:1px_#111] dark:[-webkit-text-stroke:1px_#F8FAFC]"
+                >
                   I'm
                 </span>
                 <span
-                  className="block text-[#0047AB] font-black leading-tight tracking-tight sm:whitespace-nowrap"
+                  className="block text-[#0047AB] dark:text-[#38BDF8] font-black leading-tight tracking-tight sm:whitespace-nowrap [-webkit-text-stroke:1px_#0047AB] dark:[-webkit-text-stroke:1px_#38BDF8]"
                   style={{
                     fontSize: "clamp(2rem, 5.2vw, 3.8rem)",
                     fontWeight: 900,
-                    WebkitTextStroke: "1px #0047AB"
                   }}
                 >
                   Diaz R. Yuristianto
@@ -113,10 +114,10 @@ export default function HeroSection() {
 
             {/* 4. Tagline — Neubrutalist Card */}
             <div
-              className="w-full max-w-xl mb-6 p-3.5 sm:p-4 rounded-2xl border-[2.5px] border-[#111] bg-white shadow-[4px_4px_0_#111] text-left motion-safe:animate-[fadeUp_500ms_400ms_both]"
+              className="w-full max-w-xl mb-6 p-3.5 sm:p-4 rounded-2xl border-[2.5px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] shadow-[4px_4px_0_#111] dark:shadow-[4px_4px_0_#0047AB] text-left motion-safe:animate-[fadeUp_500ms_400ms_both]"
             >
               <p
-                className="text-[#374151] text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#0047AB] pl-3 italic"
+                className="text-[#374151] dark:text-slate-300 text-xs sm:text-sm font-semibold leading-relaxed border-l-[3.5px] border-[#0047AB] dark:border-[#38BDF8] pl-3 italic"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 "Computer Engineering student specializing in AI and Software Engineering. Passionate about designing, fine-tuning, and deploying scalable machine learning models into production-ready software."
@@ -135,10 +136,10 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 id="cta-cv"
                 className="flex items-center gap-2 h-11 px-6 rounded-full
-                  bg-[#E23636] hover:bg-[#DC2626] border-[2.5px] border-[#111] font-black text-sm text-white
-                  shadow-[4px_4px_0_#111]
+                  bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] border-[2.5px] border-[#111] dark:border-slate-200 font-black text-sm text-white
+                  shadow-[4px_4px_0_#111] dark:shadow-[4px_4px_0_#FFFFFF]
                   transition-all duration-150
-                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]
+                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111] dark:hover:shadow-[6px_6px_0_#38BDF8]
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <HiArrowTopRightOnSquare className="w-4 h-4 stroke-[1]" aria-hidden="true" />
@@ -150,10 +151,10 @@ export default function HeroSection() {
                 href="#contact"
                 id="cta-kontak"
                 className="flex items-center gap-2 h-11 px-6 rounded-full
-                  bg-white hover:bg-neutral-50 border-[2.5px] border-[#111] font-black text-sm text-[#111]
-                  shadow-[4px_4px_0_#111]
+                  bg-white dark:bg-[#121826] hover:bg-neutral-50 dark:hover:bg-[#182236] border-[2.5px] border-[#111] dark:border-slate-200 font-black text-sm text-[#111] dark:text-[#F8FAFC]
+                  shadow-[4px_4px_0_#111] dark:shadow-[4px_4px_0_#0047AB]
                   transition-all duration-150
-                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111]
+                  hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111] dark:hover:shadow-[6px_6px_0_#38BDF8]
                   active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <HiEnvelope className="w-4 h-4" aria-hidden="true" />

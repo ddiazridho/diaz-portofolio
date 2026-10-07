@@ -21,7 +21,7 @@ export default function WindowCard({ avatarSrc, title = "avatar.jpg" }: WindowCa
       {/* Window title bar */}
       <div
         className="flex items-center justify-between px-4 py-3 border-b-2"
-        style={{ borderColor: "var(--color-border)", background: "#F0F0F0" }}
+        style={{ borderColor: "var(--color-border)", background: "var(--color-surface-hover)" }}
       >
         {/* Traffic lights */}
         <div className="flex gap-2">

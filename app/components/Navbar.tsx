@@ -71,9 +71,9 @@ export default function Navbar() {
         className={`
           fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 sm:px-6 md:px-8 box-border
           flex items-center justify-between
-          bg-white/80 backdrop-blur-md
-          rounded-full border-2 border-[#111]
-          shadow-[4px_4px_0_#111]
+          bg-white/85 dark:bg-[#121826]/90 backdrop-blur-md
+          rounded-full border-2 border-[#111] dark:border-slate-200
+          shadow-[4px_4px_0_#111] dark:shadow-[4px_4px_0_#0047AB]
           transition-all duration-200
           ${pillSize}
         `}
@@ -84,8 +84,8 @@ export default function Navbar() {
           className="flex items-center gap-1.5 sm:gap-2 shrink-0 pl-1 sm:pl-3"
           aria-label="Home"
         >
-          <span className="font-black text-base sm:text-lg tracking-tight leading-none text-[#111]">
-            Diaz<span className="text-[#0047AB]">.</span>
+          <span className="font-black text-base sm:text-lg tracking-tight leading-none text-[#111] dark:text-[#F8FAFC]">
+            Diaz<span className="text-[#0047AB] dark:text-[#38BDF8]">.</span>
           </span>
         </Link>
 
@@ -106,8 +106,8 @@ export default function Navbar() {
                     w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto md:px-4 md:py-2
                     ${
                       isActive
-                        ? "bg-[#111] text-white shadow-[2px_2px_0_#111]"
-                        : "text-[#111] hover:bg-[#111]/5"
+                        ? "bg-[#111] text-white shadow-[2px_2px_0_#111] dark:bg-[#F8FAFC] dark:text-[#0a0d14] dark:shadow-[2px_2px_0_#38BDF8]"
+                        : "text-[#111] dark:text-slate-300 hover:bg-[#111]/5 dark:hover:bg-white/10 dark:hover:text-white"
                     }
                   `}
                 >
@@ -121,11 +121,16 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 shrink-0">
+          {/* Mobile Theme Changer & Translator (< md) */}
+          <div className="flex md:hidden items-center">
+            <ThemeLanguageToggle />
+          </div>
+
           {/* Hire Me — hidden on mobile so nav icons have comfortable space */}
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] bg-[#E23636] hover:bg-[#DC2626] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] dark:border-slate-200 bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] dark:hover:shadow-[2px_2px_0_#38BDF8] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
             <span>Hire Me</span>
           </a>

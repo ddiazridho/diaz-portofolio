@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import FlyingMascot from "./components/FlyingMascot";
 import WalkingMascot from "./components/WalkingMascot";
+import { ThemeLanguageProvider } from "./context/ThemeLanguageContext";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -29,6 +30,22 @@ export const metadata: Metadata = {
   },
 };
 
+const themeInitScript = `
+  (function() {
+    try {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -37,17 +54,23 @@ export default function RootLayout({
   return (
     <html
       lang="id"
+      suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-        <FlyingMascot />
-        <WalkingMascot
-          src="/Red Larva.png"
-          width={10}
-          duration={32}
-          facingRight={true}
-        />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-full flex flex-col transition-colors duration-200">
+        <ThemeLanguageProvider>
+          {children}
+          <FlyingMascot />
+          <WalkingMascot
+            src="/Red Larva.png"
+            width={10}
+            duration={32}
+            facingRight={true}
+          />
+        </ThemeLanguageProvider>
       </body>
     </html>
   );

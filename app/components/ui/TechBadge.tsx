@@ -11,7 +11,7 @@ export default function TechBadge({ name, icon, variant = "pill" }: TechBadgePro
     return (
       <span
         className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
-        style={{ borderColor: "var(--color-border)", color: "var(--color-text-muted)", background: "white" }}
+        style={{ borderColor: "var(--color-border)", color: "var(--color-text-muted)", background: "var(--color-surface)" }}
       >
         {icon && <span className="text-sm">{icon}</span>}
         {name}

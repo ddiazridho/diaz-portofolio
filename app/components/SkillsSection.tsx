@@ -78,7 +78,7 @@ const toolsAndFrameworks: SkillItem[] = [
 const aiAndMlOps: SkillItem[] = [
   {
     name: "RAG",
-    icon: <FileSearch className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <FileSearch className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "Docker",
@@ -90,27 +90,27 @@ const aiAndMlOps: SkillItem[] = [
   },
   {
     name: "LLM",
-    icon: <BotMessageSquare className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <BotMessageSquare className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "Machine Learning",
-    icon: <BrainCircuit className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <BrainCircuit className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "Deep Learning",
-    icon: <Network className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <Network className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "REST API",
-    icon: <ArrowLeftRight className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <ArrowLeftRight className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "Vector Search",
-    icon: <Layers className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <Layers className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
   {
     name: "Pretrained API",
-    icon: <CloudLightning className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
+    icon: <CloudLightning className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" />,
   },
 ];
 
@@ -142,23 +142,22 @@ export default function SkillsSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0047AB] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
               DEV STACK <span className="opacity-40 font-normal">|</span> (02)
             </span>
           </motion.div>
 
-          {/* Section Title: Selected Works */}
+          {/* Section Title */}
           <motion.h2
             variants={fadeUp}
             custom={1}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             TECHNOLOGY I USE <br />
-
           </motion.h2>
 
           {/* Subtitle */}
@@ -168,7 +167,7 @@ export default function SkillsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-[#374151] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             The core tech stack, frameworks, and modern tools I leverage to build scalable and intelligent software.
           </motion.p>
@@ -189,29 +188,29 @@ export default function SkillsSection() {
               flexDirection: 'column',
               gap: '12px'
             }}
-            className="bg-white border-[3px] border-[#111] rounded-3xl p-6 md:p-8 shadow-[5px_5px_0px_0px_#111] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200"
+            className="bg-white dark:bg-[#121826] border-[3px] border-[#111] dark:border-slate-200 rounded-3xl p-6 md:p-8 shadow-[5px_5px_0px_0px_#111] dark:shadow-[5px_5px_0px_0px_#0047AB] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] dark:hover:shadow-[8px_8px_0px_0px_#38BDF8] transition-all duration-200"
           >
             {/* Card Header */}
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-[#0047AB] border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-10 h-10 rounded-xl bg-[#0047AB] dark:bg-[#1D4ED8] border-[2px] border-[#111] dark:border-slate-200 shadow-[2px_2px_0px_#111] dark:shadow-[2px_2px_0px_#38BDF8] flex items-center justify-center flex-shrink-0 text-white">
                 <Wrench className="w-5 h-5 stroke-[2.5]" />
               </div>
               <h3
-                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111]"
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 Tools & Frameworks
               </h3>
             </div>
 
-            <div className="w-full border-b-[2px] border-[#111] mt-1" />
+            <div className="w-full border-b-[2px] border-[#111] dark:border-slate-700 mt-1" />
 
             {/* Badges */}
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {toolsAndFrameworks.map((item) => (
                 <div
                   key={item.name}
-                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-white text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
+                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] dark:border-slate-300 bg-white dark:bg-[#182236] text-[#111] dark:text-slate-100 font-bold text-xs shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] dark:hover:shadow-[3px_3px_0px_0px_#38BDF8] transition-all cursor-default select-none"
                 >
                   <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
                     {item.icon}
@@ -234,29 +233,29 @@ export default function SkillsSection() {
               flexDirection: 'column',
               gap: '12px'
             }}
-            className="bg-white border-[3px] border-[#111] rounded-3xl p-6 md:p-8 shadow-[5px_5px_0px_0px_#111] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200"
+            className="bg-white dark:bg-[#121826] border-[3px] border-[#111] dark:border-slate-200 rounded-3xl p-6 md:p-8 shadow-[5px_5px_0px_0px_#111] dark:shadow-[5px_5px_0px_0px_#0047AB] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] dark:hover:shadow-[8px_8px_0px_0px_#38BDF8] transition-all duration-200"
           >
             {/* Card Header */}
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-[#E23636] border-[2px] border-[#111] shadow-[2px_2px_0px_#111] flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-10 h-10 rounded-xl bg-[#E23636] dark:bg-[#EF4444] border-[2px] border-[#111] dark:border-slate-200 shadow-[2px_2px_0px_#111] dark:shadow-[2px_2px_0px_#38BDF8] flex items-center justify-center flex-shrink-0 text-white">
                 <Bot className="w-5 h-5 stroke-[2.5]" />
               </div>
               <h3
-                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111]"
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC]"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 AI & MLOps
               </h3>
             </div>
 
-            <div className="w-full border-b-[2px] border-[#111] mt-1" />
+            <div className="w-full border-b-[2px] border-[#111] dark:border-slate-700 mt-1" />
 
             {/* Badges */}
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {aiAndMlOps.map((item) => (
                 <div
                   key={item.name}
-                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-white text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
+                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] dark:border-slate-300 bg-white dark:bg-[#182236] text-[#111] dark:text-slate-100 font-bold text-xs shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] dark:hover:shadow-[3px_3px_0px_0px_#38BDF8] transition-all cursor-default select-none"
                 >
                   <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
                     {item.icon}

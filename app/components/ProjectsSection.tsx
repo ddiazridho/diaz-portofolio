@@ -54,7 +54,7 @@ const projects: Project[] = [
       { name: "Docker", icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" /> },
       { name: "FastAPI", icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" /> },
       { name: "PostgreSQL", icon: <SiPostgresql className="w-3.5 h-3.5 text-[#4169E1]" /> },
-      { name: "OpenClaw", icon: <Bot className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" /> },
+      { name: "OpenClaw", icon: <Bot className="w-3.5 h-3.5 stroke-[2.5] text-[#111] dark:text-slate-200" /> },
       { name: "OpenAI API", icon: <RiOpenaiFill className="w-3.5 h-3.5 text-[#10A37F]" /> },
     ],
     github: "https://github.com/ddiazridho/instagram_openclaw",
@@ -78,23 +78,22 @@ export default function ProjectsSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] bg-[#0047AB] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] mb-3 uppercase">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-[2.5px] border-[#111] dark:border-slate-200 bg-[#0047AB] dark:bg-[#1D4ED8] text-white font-bold text-xs sm:text-sm tracking-widest shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#38BDF8] mb-3 uppercase">
               Projects <span className="opacity-40 font-normal">|</span> (03)
             </span>
           </motion.div>
 
-          {/* Section Title: Selected Works */}
+          {/* Section Title */}
           <motion.h2
             variants={fadeUp}
             custom={1}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] text-center leading-[1.05] mb-2"
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] text-center leading-[1.05] mb-2"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             THINGS I`VE BUILT <br />
-
           </motion.h2>
 
           {/* Subtitle */}
@@ -104,7 +103,7 @@ export default function ProjectsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-[#374151] max-w-xl text-sm sm:text-base font-medium leading-relaxed"
+            className="text-[#374151] dark:text-slate-400 max-w-xl text-sm sm:text-base font-medium leading-relaxed"
           >
             A selection of end-to-end applications, experiments, and production-ready systems I've built.
           </motion.p>
@@ -120,10 +119,10 @@ export default function ProjectsSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="border-[3px] border-[#111] bg-white rounded-2xl sm:rounded-3xl shadow-[6px_6px_0px_0px_#111] p-5 sm:p-6 lg:p-7 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] transition-all duration-200 flex flex-col h-full group"
+              className="border-[3px] border-[#111] dark:border-slate-200 bg-white dark:bg-[#121826] rounded-2xl sm:rounded-3xl shadow-[6px_6px_0px_0px_#111] dark:shadow-[6px_6px_0px_0px_#0047AB] p-5 sm:p-6 lg:p-7 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_#111] dark:hover:shadow-[8px_8px_0px_0px_#38BDF8] transition-all duration-200 flex flex-col h-full group"
             >
               {/* Thumbnail Container */}
-              <div className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl border-[2.5px] border-[#111] overflow-hidden bg-neutral-100 shadow-[3px_3px_0px_0px_#111] mb-5">
+              <div className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl border-[2.5px] border-[#111] dark:border-slate-300 overflow-hidden bg-neutral-100 dark:bg-[#182236] shadow-[3px_3px_0px_0px_#111] dark:shadow-[3px_3px_0px_0px_#0047AB] mb-5">
                 <Image
                   src={project.thumbnail}
                   alt={project.title}
@@ -135,14 +134,14 @@ export default function ProjectsSection() {
 
               {/* Judul Project */}
               <h3
-                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] mb-2.5"
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111] dark:text-[#F8FAFC] mb-2.5"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 {project.title}
               </h3>
 
               {/* Deskripsi Project */}
-              <p className="text-xs sm:text-sm text-[#374151] font-medium leading-relaxed mb-5">
+              <p className="text-xs sm:text-sm text-[#374151] dark:text-slate-300 font-medium leading-relaxed mb-5">
                 {project.description}
               </p>
 
@@ -151,7 +150,7 @@ export default function ProjectsSection() {
                 {project.tags.map((tag) => (
                   <div
                     key={tag.name}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-white text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] dark:border-slate-300 bg-white dark:bg-[#182236] text-[#111] dark:text-slate-100 font-bold text-xs shadow-[2px_2px_0px_0px_#111] dark:shadow-[2px_2px_0px_0px_#0047AB] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] dark:hover:shadow-[3px_3px_0px_0px_#38BDF8] transition-all cursor-default select-none"
                   >
                     {tag.icon && (
                       <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
@@ -168,7 +167,7 @@ export default function ProjectsSection() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border-[2.5px] border-[#111] bg-[#E23636] hover:bg-[#DC2626] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[3px_3px_0px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none"
+                className="mt-auto w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border-[2.5px] border-[#111] dark:border-slate-200 bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[3px_3px_0px_0px_#111] dark:shadow-[3px_3px_0px_0px_#FFFFFF] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[5px_5px_0px_0px_#111] dark:hover:shadow-[5px_5px_0px_0px_#38BDF8] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_#111] transition-all duration-150 no-underline cursor-pointer select-none"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 <SiGithub className="w-4 h-4 text-white" />
