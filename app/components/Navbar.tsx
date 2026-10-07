@@ -25,31 +25,50 @@ export default function Navbar() {
     { href: "#contact", label: t.nav.contact, Icon: HiOutlineEnvelope },
   ];
 
-  /* ── Scroll-spy via IntersectionObserver ── */
+  /* ── Robust Scroll-spy & shrink on scroll ── */
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    let ticking = false;
 
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActive(`#${id}`);
-        },
-        { threshold: 0.45 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 40);
 
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
+          // If reached the bottom of page, highlight contact
+          const isBottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 60;
+          if (isBottom) {
+            setActive("#contact");
+            ticking = false;
+            return;
+          }
 
-  /* ── Shrink on scroll ── */
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+          // Trigger line is ~28% from the top of the viewport (below fixed navbar)
+          const trigger = Math.max(120, window.innerHeight * 0.28);
+          let currentSection = "";
+
+          for (const id of SECTION_IDS) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= trigger && rect.bottom > trigger) {
+              currentSection = id === "hero" ? "" : `#${id}`;
+              break;
+            }
+          }
+
+          setActive(currentSection);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   /* ── Smooth scroll with offset ── */
@@ -71,7 +90,7 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={`
-          fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 sm:px-6 md:px-8 box-border
+          fixed top-4 left-1/2 -translate-x-1/2 z-50 px-3 sm:px-6 md:px-8 box-border
           flex items-center justify-between
           bg-white/85 dark:bg-[#121826]/90 backdrop-blur-md
           rounded-full border-2 border-[#111] dark:border-slate-200
@@ -122,17 +141,12 @@ export default function Navbar() {
         </ul>
 
         {/* Right actions */}
-        <div className="flex items-center gap-2 shrink-0">
-          {/* Mobile Theme Changer & Translator (< md) */}
-          <div className="flex md:hidden items-center">
-            <ThemeLanguageToggle />
-          </div>
-
-          {/* Hire Me — hidden on mobile so nav icons have comfortable space */}
+        <div className="flex items-center shrink-0">
+          {/* Hire Me — displayed on all screen sizes */}
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-1.5 h-9 md:h-10 px-4 md:px-5 rounded-full border-2 border-[#111] dark:border-slate-200 bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] font-bold text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] dark:hover:shadow-[2px_2px_0_#38BDF8] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            className="inline-flex items-center justify-center gap-1.5 h-8 sm:h-9 md:h-10 px-3 sm:px-4 md:px-5 rounded-full border-2 border-[#111] dark:border-slate-200 bg-[#E23636] hover:bg-[#DC2626] dark:hover:bg-[#EF4444] font-bold text-[11px] sm:text-xs md:text-sm text-white transition-all hover:-translate-x-px hover:-translate-y-px hover:shadow-[2px_2px_0_#111] dark:hover:shadow-[2px_2px_0_#38BDF8] active:translate-x-0 active:translate-y-0 active:shadow-none"
           >
             <span>{t.nav.hireMe}</span>
           </a>
