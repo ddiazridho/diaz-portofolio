@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BrainCircuit, Code2 } from "lucide-react";
+import { Bot, Code2 } from "lucide-react";
 
 /** Floating pill sticker matching reference attachment */
 function FloatingBadge({
@@ -91,10 +91,10 @@ export default function HeroPhoto({ src }: { src: string }) {
       </div>
 
       {/* ── Badges ── */}
-      {/* AI Engineer Badge — right side, compact, brain/AI icon */}
+      {/* AI Engineer Badge — right side, compact, clean bot icon matching Software icon style */}
       <FloatingBadge
         label="AI Engineer"
-        icon={<BrainCircuit className="w-3.5 h-3.5 text-[#0047AB] stroke-[2.5]" />}
+        icon={<Bot className="w-3.5 h-3.5 text-[#0047AB] stroke-[2.5]" />}
         rotate={5}
         delay={0}
         shadowColor="#111111"

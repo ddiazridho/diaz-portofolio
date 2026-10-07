@@ -35,82 +35,82 @@ interface SkillItem {
 const toolsAndFrameworks: SkillItem[] = [
   {
     name: "Python",
-    icon: <SiPython className="w-4 h-4 text-[#3776AB]" />,
+    icon: <SiPython className="w-3.5 h-3.5 text-[#3776AB]" />,
   },
   {
     name: "FastAPI",
-    icon: <SiFastapi className="w-4 h-4 text-[#009688]" />,
+    icon: <SiFastapi className="w-3.5 h-3.5 text-[#009688]" />,
   },
   {
     name: "Laravel",
-    icon: <SiLaravel className="w-4 h-4 text-[#FF2D20]" />,
+    icon: <SiLaravel className="w-3.5 h-3.5 text-[#FF2D20]" />,
   },
   {
     name: "Scikit-learn",
-    icon: <SiScikitlearn className="w-4 h-4 text-[#F7931E]" />,
+    icon: <SiScikitlearn className="w-3.5 h-3.5 text-[#F7931E]" />,
   },
   {
     name: "TensorFlow",
-    icon: <SiTensorflow className="w-4 h-4 text-[#FF6F00]" />,
+    icon: <SiTensorflow className="w-3.5 h-3.5 text-[#FF6F00]" />,
   },
   {
     name: "Keras",
-    icon: <SiKeras className="w-4 h-4 text-[#D00000]" />,
+    icon: <SiKeras className="w-3.5 h-3.5 text-[#D00000]" />,
   },
   {
     name: "Pandas",
-    icon: <SiPandas className="w-4 h-4 text-[#150458]" />,
+    icon: <SiPandas className="w-3.5 h-3.5 text-[#150458]" />,
   },
   {
     name: "MySQL",
-    icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
+    icon: <SiMysql className="w-3.5 h-3.5 text-[#4479A1]" />,
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql className="w-4 h-4 text-[#4169E1]" />,
+    icon: <SiPostgresql className="w-3.5 h-3.5 text-[#4169E1]" />,
   },
   {
     name: "Git",
-    icon: <SiGit className="w-4 h-4 text-[#F05032]" />,
+    icon: <SiGit className="w-3.5 h-3.5 text-[#F05032]" />,
   },
 ];
 
 const aiAndMlOps: SkillItem[] = [
   {
     name: "RAG",
-    icon: <FileSearch className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <FileSearch className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Docker",
-    icon: <SiDocker className="w-4 h-4 text-[#2496ED]" />,
+    icon: <SiDocker className="w-3.5 h-3.5 text-[#2496ED]" />,
   },
   {
     name: "Transformers",
-    icon: <SiHuggingface className="w-4 h-4 text-[#FFD21E]" />,
+    icon: <SiHuggingface className="w-3.5 h-3.5 text-[#FFD21E]" />,
   },
   {
     name: "LLM",
-    icon: <BotMessageSquare className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <BotMessageSquare className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Machine Learning",
-    icon: <BrainCircuit className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <BrainCircuit className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Deep Learning",
-    icon: <Network className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <Network className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "REST API",
-    icon: <ArrowLeftRight className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <ArrowLeftRight className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Vector Search",
-    icon: <Layers className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <Layers className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
   {
     name: "Pretrained API",
-    icon: <CloudLightning className="w-4 h-4 stroke-[2.5] text-[#111]" />,
+    icon: <CloudLightning className="w-3.5 h-3.5 stroke-[2.5] text-[#111]" />,
   },
 ];
 
@@ -211,9 +211,9 @@ export default function SkillsSection() {
               {toolsAndFrameworks.map((item) => (
                 <div
                   key={item.name}
-                  className="flex w-full items-center gap-2.5 border-[2px] border-[#111] rounded-xl bg-white px-3 h-6 text-xs font-bold text-[#111] shadow-[2px_2px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_#111] transition-all cursor-default select-none"
+                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-white text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
                 >
-                  <span style={{ marginLeft: '10px' }} className="w-4 h-4 flex items-center justify-center flex-shrink-0">
+                  <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </span>
                   <span className="truncate">{item.name}</span>
@@ -256,9 +256,9 @@ export default function SkillsSection() {
               {aiAndMlOps.map((item) => (
                 <div
                   key={item.name}
-                  className="flex w-full items-center gap-2.5 border-[2px] border-[#111] rounded-xl bg-white px-3 h-6 text-xs font-bold text-[#111] shadow-[2px_2px_0px_#111] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_#111] transition-all cursor-default select-none"
+                  className="flex w-full items-center gap-1.5 px-3 py-1 rounded-xl border-[2px] border-[#111] bg-white text-[#111] font-bold text-xs shadow-[2px_2px_0px_0px_#111] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#111] transition-all cursor-default select-none"
                 >
-                  <span style={{ marginLeft: '10px' }} className="w-4 h-4 flex items-center justify-center flex-shrink-0">
+                  <span className="w-3.5 h-3.5 flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </span>
                   <span className="truncate">{item.name}</span>
