@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Diaz Ridho Yuristianto, a Computer Engineering student at Universitas Diponegoro.",
   verification: {
-    google: 'H82awMrSBd83WSwFMD1POxzdGAPFrSgnqO',
+    google: 'H82awMrSBd83WSwFMD1POxzdGAPFrSgnqOHFXzL9QRY',
   },
   keywords: ["Software Engineer", "AI Engineer", "portfolio", "Computer Engineering", "Universitas Diponegoro", "Teknik Komputer", "Undip", "Diaz", "Diaz Ridho Yuristianto"],
   authors: [{ name: "Diaz Ridho" }],
